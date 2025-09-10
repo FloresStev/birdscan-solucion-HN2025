@@ -1,0 +1,49 @@
+.CTA_section{
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+
+}
+
+.CTA_section-container{
+    width: 1704px;
+    height: 441px;
+    background-color: var(--primary-color);
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.CTA_section-h2{
+    font-size: 38px;
+    font-weight: 600;
+    color: var(--background-color);
+    width: 552px;
+
+}
+
+.CTA_section-p{
+    font-size: 20px;
+    font-weight: 300;
+    color: var(--background-color);
+    width: 800px;
+}
+
+.CTA_section-button{
+    width: 280px;
+    height: 80px;
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--background-color);
+    border-radius: 20px;
+    border: 2px solid var(--background-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.CTA_section-button:hover{
+    background-color: var(--secondary-color);
+}

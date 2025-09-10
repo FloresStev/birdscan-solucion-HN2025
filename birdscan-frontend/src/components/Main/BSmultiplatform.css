@@ -1,0 +1,65 @@
+.birdscanMultiplatform_section {
+    margin-top: 20px;
+    background-color: var(--secondary-color);
+    width: 100%;
+}
+
+.container_multiplatformcontent{
+    display:flex;
+    width: 1704px;
+    justify-content: center;
+    align-items: center;
+}
+
+.image_container{
+    width: 818px;
+    height: 470px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 136px;
+}
+
+.content_container{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 836px;
+    height: 567px;
+}
+
+.h2_birdscan_multiplatform{
+    font-size: 26px;
+    font-weight: 500;
+    color: var(--background-color);
+}
+
+.p_birdscan_multiplatform{
+    font-family: 'Montserrat';
+    font-size: 20px;
+    font-weight: 400;
+    color: var(--background-color);
+    width: 566px;
+}
+
+.learnmore_button{
+    width: 260px;
+    height: 60px;
+    border-radius: 20px;
+    border: 2px solid var(--background-color);
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--background-color);
+    transition: 0.3s;
+    font-weight: 700;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.learnmore_button:hover{
+    background-color: var(--details-color);
+}
+

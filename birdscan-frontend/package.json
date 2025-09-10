@@ -10,8 +10,12 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "i18next": "^25.5.2",
+    "i18next-http-backend": "^3.0.2",
     "react": "^19.1.1",
-    "react-dom": "^19.1.1"
+    "react-dom": "^19.1.1",
+    "react-i18next": "^15.7.3",
+    "translate-projects-react": "^0.0.4"
   },
   "devDependencies": {
     "@eslint/js": "^9.33.0",

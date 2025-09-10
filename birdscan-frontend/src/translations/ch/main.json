@@ -1,0 +1,68 @@
+{
+    "header":{
+        "home": "首页",
+        "explore": "探索",
+        "tours": "旅行",
+        "events": "活动",
+        "learn": "学习",
+        "login": "登录",
+        "h1_header" : "通过鸟类探索尼加拉瓜",
+        "h2_header_hero": "规划行程、识别物种，支持自然保护区的责任旅游。",
+        "primary_button_hero": "查看鸟类目录",
+        "secondary_button_hero": "规划我的行程"
+    },
+
+    "main": {
+        "h2_main": "我们在尼加拉瓜连接自然、旅游与保护",
+        "h3_main": "BirdScan是一个旨在促进尼加拉瓜保护区观鸟旅游的数字平台。您可在此获取关于留鸟与候鸟的信息、自然保护区详情、保护活动资讯，并能联系到认证的当地向导。",
+        "secondary_button_main": "规划我的行程"
+    },
+
+    "whyBS": {
+        "h2_whyBS_text": "为什么使用BirdScan？",
+        "birdslabel": "鸟类图鉴",
+        "birdsP": "照片、信息与分布图",
+        "reserveslabel": "自然保护区",
+        "reservesP": "经认证地点的可靠信息",
+        "eventslabel": "活动日历",
+        "eventsP": "观鸟季节与节庆活动",
+        "avidexlabel": "互动式AviDex",
+        "avidexp": "记录并收集旅途中发现的鸟类，寓教于乐"
+    },
+
+    "birdscanMultiplatform": {
+        "h2_birdscanMultiplatform": "随时随地访问BirdScan",
+        "p_birdscanMultiplatform": "BirdScan采用多平台设计理念，确保游客、导游及观鸟爱好者无论使用何种设备，都能随时随地探索、学习并预订体验",
+        "primary_button_birdscanMultiplatform": "下载应用",
+        "secondary_button_birdscanMultiplatform": "了解更多"
+    },
+
+    "mapsSection": {
+        "h2_mapsSection": "定位自然保护区、步道和关键观景点",
+        "p_mapsSection": "探索自然保护区的详细地图，定位步道、观鸟点及可用服务设施。提前规划行程，充分享受观鸟之旅",
+        "primary_button_mapsSection": "探索地图"
+    },
+
+    "ctaSection": {
+        "h2_ctaSection": "准备好开启观鸟之旅了吗？",
+        "p_ctaSection": "立即注册，探索尼加拉瓜惊人的生物多样性。无论您是游客、当地向导还是观鸟爱好者，BirdScan都能为您提供难忘体验所需的一切。",
+        "primary_button_ctaSection": "注册"
+    },
+
+    "footer":{
+        "navigation": "導航",
+        "home": "首页",
+        "explore": "探索",
+        "tours": "行程",
+        "events": "活动",
+        "learn": "学习",
+        "privacy_policy": "隐私政策",
+        "terms_of_service": "服务条款",
+        "contact": "联系我们",
+        "number_text": "联系电话",
+        "email_text": "邮箱",
+        "ubication": "位置",
+        "address": "尼加拉瓜莱昂",
+        "follow_us": "在社交媒体上关注我们"
+    }
+}
