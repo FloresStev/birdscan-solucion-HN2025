@@ -1,0 +1,70 @@
+{
+    "header":{
+        "home": "Inicio",
+        "explore": "Explorar",
+        "tours": "Tours",
+        "events": "Eventos",
+        "learn": "Aprende",
+        "login": "Iniciar Sesión",
+        "h1_header": "Descubre Nicaragua a través de sus aves",
+        "h2_header_hero": "Planea tus recorridos, identifica especies y apoya el turismo responsable en nuestras reservas naturales",
+        "primary_button_hero": "Ver catálogo de aves",
+        "secondary_button_hero": "Planear mi visita"
+    },
+
+    "main": {
+        "h2_main": "Conectamos naturaleza, turismo y conservación en Nicaragua",
+        "h3_main": "BirdScan es una plataforma digital diseñada para promover el aviturismo en las áreas potegidas de Nicaragua. Aquí encontrarás informacón sobre aves residentes y migratorias, reservas naturales, eventos de conservación y podrás conectar con guías locales certificados.",
+        "secondary_button_main": "Planear mi visita"
+    },
+
+    "whyBS": {
+        "h2_whyBS_text": "¿Por qué usar BirdScan?",
+        "birdslabel": "Catálogo de Aves",
+        "birdsP": "Fotografías, información y mapas de distribución",
+        "reserveslabel": "Reservas naturales",
+        "reservesP": "Información confiable sobre sitios habilitados",
+        "eventslabel": "Calendario de eventos",
+        "eventsP": "Temporadas de avistamiento y destivales",
+        "avidexlabel": "AviDex Interactivo",
+        "avidexp": "Registra y colecciona las aves que descubras en tus viajes, aprendiendo mientras juegas"
+    },
+
+    "birdscanMultiplatform": {
+        "h2_birdscanMultiplatform": "Accede a BirdScan desde cualquie lugar, en cualquier momento",
+        "p_birdscanMultiplatform": "BirdScan está diseñada bajo un enfoque multiplataforma, lo que garantiza que turistas, guías y amantes de las aves puedan explorar, aprender y reservar experiencias sin importar el dispositivo que utilicen.",
+        "primary_button_birdscanMultiplatform": "Descargar la app",
+        "secondary_button_birdscanMultiplatform": "Saber más"
+    },
+
+    "mapsSection": {
+        "h2_mapsSection": "Ubica reservas naturales, senderos y puntos claves de observación",
+        "p_mapsSection": "Explora mapas detallados de las reservas naturales, ubicando senderos, puntos de avistamiento y servicios disponibles. Planifica tu recorrido con anticipación para aprovechar al máximo tu experiencia de aviturismo.",
+        "primary_button_mapsSection": "Explorar mapas"
+    },
+
+    "ctaSection": {
+        "h2_ctaSection": "¿Listo para comenzar tu aventura de aviturismo?",
+        "p_ctaSection": "Registrate y comienza a explorar la increíble biodiversidad de Nicaragua. Ya seas un turista, guía local o amante de las aves, BirdScan tiene todo lo que necesitas para una experiencia inolvidable.",
+        "primary_button_ctaSection": "Registrarse"
+    },
+
+    "footer":{
+        "navigation": "Navegación",
+        "home": "Inicio",
+        "explore": "Explorar",
+        "tours": "Tours",
+        "events": "Eventos",
+        "learn": "Aprende",
+        "privacy_policy": "Política de Privacidad",
+        "terms_of_service": "Términos de Servicio",
+        "contact": "Contacto",
+        "number_text": "Número de Contacto",
+        "email_text": "Correo Electrónico",
+        "ubication": "Ubicación",
+        "address": "León, Nicaragua",
+        "follow_us": "Síguenos en redes sociales"
+    }
+
+
+}

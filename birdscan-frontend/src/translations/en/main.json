@@ -1,0 +1,68 @@
+{
+    "header":{
+        "home": "Home",
+        "explore": "Explore",
+        "tours": "Tours",
+        "events": "Events",
+        "learn": "Learn",
+        "login": "Log In",
+        "h1_header" : "Discover Nicaragua through its birds",
+        "h2_header_hero": "Plan your trips, identify species, and support responsible tourism in our nature reserves.",
+        "primary_button_hero": "View bird catalog",
+        "secondary_button_hero": "Plan my visit"
+    },
+
+    "main": {
+        "h2_main": "We connect nature, tourism, and conservation in Nicaragua",
+        "h3_main": "BirdScan is a digital platform designed to promote birdwatching tourism in Nicaragua's protected areas. Here you will find information about resident and migratory birds, nature reserves, conservation events, and you can connect with certified local guides",
+        "secondary_button_main": "Plan my visit"
+    },
+
+    "whyBS": {
+        "h2_whyBS_text": "Why use BirdScan?",
+        "birdslabel": "Bird Catalog",
+        "birdsP": "Photographs, information, and distribution maps",
+        "reserveslabel": "Nature reserves",
+        "reservesP": "Reliable information about authorized sites",
+        "eventslabel": "Events Calendar",
+        "eventsP": "Birding Seasons and Festivals",
+        "avidexlabel": "Interactive AviDex",
+        "avidexp": "Record and collect the birds you discover on your travels, learning as you play"
+    },
+
+    "birdscanMultiplatform": {
+        "h2_birdscanMultiplatform": "Access BirdScan from anywhere, anytime",
+        "p_birdscanMultiplatform": "BirdScan is designed with a multi-platform approach, ensuring that tourists, guides, and bird lovers can explore, learn, and book experiences regardless of the device they use.",
+        "primary_button_birdscanMultiplatform": "Download the app",
+        "secondary_button_birdscanMultiplatform": "Learn more"
+    },
+
+    "mapsSection": {
+        "h2_mapsSection": "Locate nature reserves, trails, and key observation points.",
+        "p_mapsSection": "Explore detailed maps of nature reserves, locating trails, viewing points, and available services. Plan your trip in advance to make the most of your birdwatching experience.",
+        "primary_button_mapsSection": "Explore maps"
+    },
+
+    "ctaSection": {
+        "h2_ctaSection": "Ready to start your birding adventure?",
+        "p_ctaSection": "RSign up and start exploring Nicaragua's incredible biodiversity. Whether you're a tourist, local guide, or bird lover, BirdScan has everything you need for an unforgettable experience",
+        "primary_button_ctaSection": "Sign up"
+    },
+
+    "footer":{
+        "navigation": "Navigation",
+        "home": "Home",
+        "explore": "Explore",
+        "tours": "Tours",
+        "events": "Events",
+        "learn": "Learn",
+        "privacy_policy": "Privacy Policy",
+        "terms_of_service": "Terms of Service",
+        "contact": "Contact",
+        "number_text": "Contact Number",
+        "email_text": "Email",
+        "ubication": "Location",
+        "address": "León, Nicaragua",
+        "follow_us": "Follow us on social media"
+    }
+}
