@@ -1,6 +1,7 @@
 import React from "react";
 import './CTASection.css';
 import {useTranslation} from 'react-i18next';
+import { Link } from 'react-router-dom';
 
 const CTASection: React.FC = () =>{
     const [t, i18n] = useTranslation('main');
@@ -17,9 +18,9 @@ const CTASection: React.FC = () =>{
                     </p>
                 </div>
                 
-                <a className = 'CTA_section-button'>
+                <Link to = '/signin' className = 'CTA_section-button'>
                     {t("ctaSection.primary_button_ctaSection")}
-                </a>
+                </Link>
             </div>
 
         </section>

@@ -30,7 +30,7 @@
     height: 180px;
 }
 
-.navbar a{
+.navbar_items{
     position: relative;
     color: var(--background-color);
     font-size: 18px;
@@ -39,11 +39,11 @@
     transition: 0.3s;
 }
 
-.navbar a:hover{
+.navbar_items:hover{
     color: var(--secondary-color);
 }
 
-.navbar a::before{
+.navbar_items::before{
     content: '';
     position: absolute;
     top: 100%;
@@ -54,7 +54,7 @@
     transition: 0.3s;
 }
 
-.navbar a:hover::before{
+.navbar_items:hover::before{
     width: 100%;
     color: var(--secondary-color);
 }

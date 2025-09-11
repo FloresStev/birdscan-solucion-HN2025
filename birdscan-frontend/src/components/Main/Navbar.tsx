@@ -2,31 +2,33 @@ import React from 'react'
 import './Navbar.css'
 import BirdScan_logo from '/src/assets/BirdScan_logo.svg'
 import {useTranslation} from 'react-i18next';
+import { Link } from 'react-router-dom';
 
 const Navbar: React.FC = () => {
     const [t, i18n] = useTranslation('main');
     return (
         <header className = 'header'>
             <div className = 'Navbar_container'>
-
-                <img src={BirdScan_logo} alt="BirdScan Logo" className="logo" />
+                <Link to = "/">
+                    <img src={BirdScan_logo} alt="BirdScan Logo" className="logo" />
+                </Link>
 
                 <nav className = 'navbar'>
-                    <a className = 'navbar_items' href="">
+                    <Link to = "/" className = 'navbar_items'>
                         {t('header.home')}
-                    </a>
-                    <a className = 'navbar_items' href="">
+                    </Link>
+                    <Link to = "/explore" className = 'navbar_items'>
                         {t('header.explore')}
-                    </a>
-                    <a className = 'navbar_items' href="">
+                    </Link>
+                    <Link to = "/tours" className = 'navbar_items'>
                         {t('header.tours')}
-                    </a>
-                    <a className = 'navbar_items' href="">
+                    </Link>
+                    <Link to = "/events" className = 'navbar_items'>
                         {t('header.events')}
-                    </a>
-                    <a className = 'navbar_items' href="">
+                    </Link>
+                    <Link to = "/learn" className = 'navbar_items'>
                         {t('header.learn')}
-                    </a>
+                    </Link>
 
                     <div className = 'language_selector'>
                         <select name="language" id="language" className = 'language_dropdown'>
@@ -44,9 +46,9 @@ const Navbar: React.FC = () => {
                 
                 </nav>
 
-                <a className = 'login_button' href="">
+                <Link to = "/login" className = 'login_button'>
                     {t('header.login')}
-                </a>
+                </Link>
             </div>
         </header>
     );
