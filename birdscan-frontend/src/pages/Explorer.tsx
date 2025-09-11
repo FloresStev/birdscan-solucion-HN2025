@@ -1,11 +1,14 @@
 import React from "react";
 
-const SignIn: React.FC = () => {
+
+
+const Explorer: React.FC = () => {
 
     return(
         <>
+
         </>
     );
 }
 
-export default SignIn
+export default Explorer

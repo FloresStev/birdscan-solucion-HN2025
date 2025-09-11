@@ -1,34 +1,31 @@
-import { useState } from 'react'
-import './App.css'
-import Navbar from './components/Main/Navbar.tsx'
-import Hero from './components/Main/Hero.tsx'
-import AboutBS from './components/Main/AboutBS.tsx'
-import WhyBS from './components/Main/WhyBS.tsx'
-import BSmultiplatform from './components/Main/BSmultiplatform.tsx'
-import MapsSection from './components/Main/MapsSection.tsx'
-import CTASection from './components/Main/CTASection.tsx'
-import Footer from './components/Main/Footer.tsx'
+import './App.css';
+import Navbar from './components/Main/Navbar.tsx';
+import Home from './pages/Home.tsx';
+import Explorer from './pages/Explorer.tsx';
+import Tours from './pages/Tours.tsx';
+import Events from './pages/Events.tsx';
+import Learn from './pages/Educational.tsx';
+import LogIn from './pages/LogIn.tsx';
+import SignIn from './pages/SignIn.tsx';
+
+
+import {Routes, Route} from 'react-router';
 
 function App() {
 
   return (
     <>
-      <header>
-        <Navbar />
-      </header>
+      <Navbar/>
+      <Routes>
+        <Route path = "/" element = {<Home />} />
+        <Route path = "/explore" element = {<Explorer />} />
+        <Route path = "/tours" element = {<Tours />} />
+        <Route path = "/events" element = {<Events />} />
+        <Route path = "/learn" element = {<Learn />} />
+        <Route path = "/login" element = {<LogIn />} />
+        <Route path = "/signin" element = {<SignIn />} />
 
-      <main>
-        <Hero />
-        <AboutBS />
-        <WhyBS />
-        <BSmultiplatform />
-        <MapsSection />
-        <CTASection />
-      </main>
-
-      <footer>
-        <Footer />
-      </footer>
+      </Routes>
     </>
   )
 }
