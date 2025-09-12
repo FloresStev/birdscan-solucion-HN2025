@@ -64,5 +64,15 @@
         "ubication": "位置",
         "address": "尼加拉瓜莱昂",
         "follow_us": "在社交媒体上关注我们"
+    },
+
+    "explore":{
+        "species_h2-title": "E探索物種",
+        "species_p": "在自然環境中發現多種多樣的鳥類，學習辨識方法，並了解每種物種的迷人特點。每次觀察都將拓展您的知識與自然連結",
+        "seallS_link": "查看全部",
+        "input_placeholder-species": "請輸入物種的學名或俗名",
+        "reserves_h2-tittle": "探索自然保護區",
+        "reserves_p": "沉浸於生物多樣性豐富、景觀獨特的保護區。探索生態系統，認識其保育重要性，親身體驗與各地自然資源的連結",
+        "input_placeholder-reserves": "輸入行政區、市鎮或保護區名稱"
     }
 }

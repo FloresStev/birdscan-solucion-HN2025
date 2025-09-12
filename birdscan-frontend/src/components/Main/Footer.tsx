@@ -1,6 +1,7 @@
 import React from "react";
 import './Footer.css';
 import  {useTranslation} from 'react-i18next';
+import {Link} from 'react-router'
 
 const Footer: React.FC = () =>{
     const [t, i18n] = useTranslation('main');
@@ -29,27 +30,27 @@ const Footer: React.FC = () =>{
                     <h3 className = "footer_section-tittle">
                         {t("footer.navigation")}
                     </h3>
-                    <a href='' className = 'footer_navigation-links'>
+                    <Link to='/' className = 'footer_navigation-links'>
                         {t("footer.home")}
-                    </a>
-                    <a href='' className = 'footer_navigation-links'>
+                    </Link>
+                    <Link to='explore' className = 'footer_navigation-links'>
                         {t("footer.explore")}
-                    </a>
-                    <a href='' className = 'footer_navigation-links'>
+                    </Link>
+                    <Link to='/tours' className = 'footer_navigation-links'>
                         {t("footer.tours")}
-                    </a>
-                    <a href='' className = 'footer_navigation-links'>
+                    </Link>
+                    <Link to='/events' className = 'footer_navigation-links'>
                         {t("footer.events")}
-                    </a>
-                    <a href='' className = 'footer_navigation-links'>
+                    </Link>
+                    <Link to='/learn' className = 'footer_navigation-links'>
                         {t("footer.learn")}
-                    </a>
-                    <a href='' className = 'footer_navigation-links'>
+                    </Link>
+                    <Link to='' className = 'footer_navigation-links'>
                         {t("footer.privacy_policy")}
-                    </a>
-                    <a href='' className = 'footer_navigation-links'>
+                    </Link>
+                    <Link to='' className = 'footer_navigation-links'>
                         {t("footer.terms_of_service")}
-                    </a>
+                    </Link>
                 </div>
 
                 <div className = 'contact_section'>
@@ -78,7 +79,7 @@ const Footer: React.FC = () =>{
             </section>
             <section className = "container_copyright-text">
                 <p className = 'copyright_text-content'>
-                    © BirdSccan 2025
+                    © BirdScan 2025
                 </p>
             </section>
             
