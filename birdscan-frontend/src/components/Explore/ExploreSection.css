@@ -1,0 +1,129 @@
+.explore_container{
+    width: 100%;
+    height: 100%;
+    max-height: 550px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 132px;
+}
+
+.explore_species-container {
+    background-image: url('/src/assets/e_tricolor.jpg');
+}
+
+.explore_reserves-container {
+    background-image: url('/src/assets/Ometepe_island.jpg');
+}
+
+.explore_species-container,
+.explore_reserves-container{
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    width: 100%;
+    max-width: 852px;
+    height: 550px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.explore_species-container::before,
+.explore_reserves-container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        rgba(0,0,0,0.3),
+        rgba(0,0,0,0.1)
+    );
+    z-index: 1;
+}
+
+.explore_species-container > *,
+.explore_reserves-container > * {
+    position: relative;
+    z-index: 2;
+    color: white; 
+}
+
+.explore_content-container{
+    margin-left: 144px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.explore_h2-label{
+    font-family: 'Poppins';
+    font-weight: 700;
+    font-size: 38px;
+    color: var(--background-color);
+    margin-bottom: 60px;
+}
+
+.explore_p{
+    font-family: 'Montserrat';
+    font-size: 20px;
+    font-weight: 400;
+    color: var(--background-color);
+    margin-bottom: 60px;
+    margin-right: 144px;
+}
+
+.search-bar {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 500px;
+    height: 60px;
+    margin-bottom: 20px;
+    background: #ffffff;
+    border-radius: 50px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+}
+
+.search-bar:hover {
+    box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+}
+
+.explore_input{
+    flex: 1;
+    border: none;
+    outline: none;
+    padding: 8px 35px 8px 10px;
+    font-size: 18px;
+    font-family: 'Montserrat';
+    font-weight: 500;
+    border-radius: 50px;
+}
+
+.search-icon {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #888;
+    cursor: pointer;
+}
+
+.explore_link{
+    font-family: 'Poppins';
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--background-color);
+    cursor: pointer;
+}
+
+.explore_link:hover{
+    color: var(--details-color);
+}

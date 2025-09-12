@@ -64,6 +64,16 @@
         "ubication": "Ubicación",
         "address": "León, Nicaragua",
         "follow_us": "Síguenos en redes sociales"
+    },
+
+    "explore":{
+        "species_h2-title": "Explorar especies",
+        "species_p": "Descubre una gran variedad de aves en su entorno natural, aprende a identificarlas y conoce datos fascinantes de cada especie. Con cada observación ampliarás tu conocimiento y tu conexión con la naturaleza",
+        "sealls_link": "Ver todas",
+        "input_placeholder-species": "Introduzca el nombre científico o común de la especie",
+        "reserves_h2-title": "Explorar reservas naturales",
+        "reserves_p": "Sumérgete en reservas llenas de biodiversidad y paisajes únicos. Explora sus ecosistemas, conoce su importancia para la conservación y vive la experiencia de conectar con la riqueza natural de cada lugar.",
+        "input_placeholder-reserves": "Introduzca un departamento, municipio o reserva"
     }
 
 
