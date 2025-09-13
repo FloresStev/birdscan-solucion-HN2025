@@ -1,5 +1,6 @@
 {
     "header":{
+        "setLanguage": "选择语言",
         "home": "首页",
         "explore": "探索",
         "tours": "旅行",

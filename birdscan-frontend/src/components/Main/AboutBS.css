@@ -1,6 +1,6 @@
 .aboutBS_section{
-    padding: 50px 0;
-    background-color: #f9f9f9;
+    padding:30px 0;
+    background-color: var(--color-surface);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -10,7 +10,7 @@
 .h2_aboutBS_section{
     font-size: 38px;
     font-weight: 600;
-    color: var(--primary-color);
+    color: var(--color-primary);
     margin-bottom: 20px;
     text-align: center;
     margin-bottom: 0 auto;
@@ -21,7 +21,7 @@
     font-family: 'Montserrat';
     font-size: 20px;
     font-weight: 300;
-    color: var(--text-color);
+    color: var(--color-text-primary);
     margin-bottom: 40px;
     text-align:center;
     width: 841px;
@@ -42,22 +42,21 @@
 }
 
 .secondary_button_main{
-    margin-bottom: 40px;
     width: 280px;
     height: 80px;
     border-radius: 20px;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: var(--secondary-color);
+    color: var(--color-secondary);
     font-size: 20px;
     font-weight: 700;
-    border: 2px solid var(--secondary-color);
+    border: 2px solid var(--color-secondary);
 }
 
 .secondary_button_main:hover{
-    background-color: var(--secondary-color);
-    color: var(--background-color);
+    background-color: var(--color-secondary-hover);
+    color: var(--color-text-primary);
     transition: 0.3s;
 }
 

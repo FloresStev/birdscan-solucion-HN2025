@@ -3,9 +3,16 @@ import './Navbar.css'
 import BirdScan_logo from '/src/assets/BirdScan_logo.svg'
 import {useTranslation} from 'react-i18next';
 import { Link } from 'react-router-dom';
+import {useTheme} from './ThemeContext.tsx';
+import LanguageDropdown from './LanguageDropdown';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faMoon, faSun } from '@fortawesome/free-solid-svg-icons';
+
 
 const Navbar: React.FC = () => {
     const [t, i18n] = useTranslation('main');
+    const {darkMode, toggleDarkMode} = useTheme();
+
     return (
         <header className = 'header'>
             <div className = 'Navbar_container'>
@@ -31,21 +38,16 @@ const Navbar: React.FC = () => {
                     </Link>
 
                     <div className = 'language_selector'>
-                        <select name="language" id="language" className = 'language_dropdown'>
-                            <option value="es" onClick={() => i18n.changeLanguage('es')}>
-                                Español 🇳🇮
-                            </option>
-                            <option value="en" onClick={() => i18n.changeLanguage('en')}>
-                                English 🇺🇸
-                            </option>
-                            <option value="ch" onClick={() => i18n.changeLanguage('ch')}>
-                                中国 🇨🇳
-                            </option>
-                        </select>
+                        <LanguageDropdown i18n={i18n} />
                     </div>
                 
                 </nav>
-
+                <button onClick={toggleDarkMode}
+                    className={`theme-toggle ${darkMode ? 'dark' : 'light'}`}>
+                        <div className = 'circle'>
+                            <FontAwesomeIcon icon={darkMode ? faMoon : faSun} />
+                        </div>
+                </button>
                 <Link to = "/login" className = 'login_button'>
                     {t('header.login')}
                 </Link>

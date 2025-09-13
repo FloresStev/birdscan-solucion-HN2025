@@ -3,6 +3,7 @@
     display: flex;
     width: 100%;
     justify-content: center;
+    background-color: var(--color-surface);
 
 }
 
@@ -10,14 +11,14 @@
     display: flex;
     width: 1152px;
     height: 671px;
-    background-color: var(--primary-color)
+    background-color: var(--color-primary)
 }
 
 .maps_content-container{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    background-color: var(--details-color);
+    background-color: var(--color-surface);
     width: 552px;
     height: 671px;
 }
@@ -25,7 +26,7 @@
 .h2_maps-section{
     font-size: 38px;
     font-weight: 600;
-    color: var(--background-color);
+    color: var(--color-text-primary);
     text-align: left;
     align-items: center;
     margin-left: 15px;
@@ -38,7 +39,7 @@
     font-family: 'Montserrat';
     font-size: 20px;
     font-weight: 300;
-    color: var(--background-color);
+    color: var(--color-text-primary);
     width: 417px;
     margin-bottom: 40px;
 }
@@ -46,7 +47,7 @@
 .button_maps-section{
     margin-left: 15px;
     border-radius: 20px;
-    border: 2px solid var(--secondary-color);
+    border: 2px solid var(--color-secondary);
     width: 392px;
     height: 80px;
     font-size: 20px;
@@ -54,12 +55,12 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    color: var(--secondary-color);
+    color: var(--color-secondary);
     cursor: pointer;
     transition: 0.3s;
 }
 
 .button_maps-section:hover{
-    background-color: var(--secondary-color);
-    color: var(--background-color);
+    background-color: var(--color-secondary);
+    color: var(--color-surface);
 }
