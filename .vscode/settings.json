@@ -1,0 +1,10 @@
+{
+    "editor.wordWrap": "on",
+    "material-icon-theme.files.associations": {
+        "*.module.ts": "nest-module",
+        "*.controller.ts": "nest-controller",
+        "*.service.ts": "nest-service",
+        "*.guard.ts": "nest-guard",
+        "*.middleware.ts": "cog"
+    }
+}
