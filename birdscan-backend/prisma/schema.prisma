@@ -1,0 +1,165 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+  output   = "../generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User{
+  id String @id @default(uuid())
+  email String @unique
+  cellphone_number String?
+  userName String @unique
+  password String
+  firstName String
+  lastName String
+  role Role @default(USER)
+  createdAt DateTime @default(now())
+  updateAt DateTime @updatedAt
+
+  speciesUnlocks UserSpeciesUnlock[]
+}
+
+model UserSpeciesUnlock {
+  id String @id @default(uuid())
+  user User @relation(fields: [userId], references: [id])
+  userId String
+  species Species @relation(fields: [speciesId], references: [id])
+  speciesId String
+
+  basicInfo Boolean @default(false)
+  conservation Boolean @default(false)
+  distribution Boolean @default(false)
+  behavior Boolean @default(false)
+
+  unlockedAt DateTime @default(now())
+
+  @@unique([userId, speciesId])
+}
+
+enum Role{
+  USER
+  ADMIN
+  GUIDE
+}
+
+model Reserve {
+  id String @id @default(uuid())
+  name String
+  description String
+  location String
+  area Float
+  latitude Float
+  longitude Float 
+  createdAt DateTime @default(now())
+  updateAt DateTime @updatedAt
+  activities String[]
+  protected_area_type String
+  images String[]
+  entrance_fee Float
+
+  speccies ReserveSpecies[]
+  guides ReserveGuide[]
+  events Event[]
+  observations SpeciesObservation[] 
+}
+
+model Species{
+  id String @id @default(uuid())
+  spanish_commonName String
+  english_commonName String
+  scientificName String
+  conservationStatus String
+  status String
+  description String
+  imageUrl String
+  distribution String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  reserves ReserveSpecies[]
+  observations SpeciesObservation[]
+  userUnlocks UserSpeciesUnlock[]
+}
+
+model SpeciesObservation {
+  id String @id @default(uuid())
+  species Species  @relation(fields: [speciesId], references: [id], onDelete: Cascade)
+  speciesId String
+  reserve Reserve @relation(fields: [reserveId], references: [id])
+  reserveId String
+  latitude Float
+  longitude Float
+  observedAt DateTime @default(now())
+  abundance Int? @default(1)
+}
+
+
+model Guide{
+  id String @id @default(uuid())
+  email String
+  phone String
+  bio String
+  createdAt  DateTime  @default(now())
+  updatedAt  DateTime  @updatedAt
+
+  reserves   ReserveGuide[]
+}
+
+model Event{
+  id String @id @default(uuid())
+  reserve Reserve @relation(fields: [reserveId], references: [id], onDelete: Cascade)
+  reserveId String
+  name String
+  description String
+  startDate DateTime
+  endDate DateTime
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model ReserveSpecies{
+  id String @id @default(uuid())
+  reserve Reserve @relation(fields: [reserveId], references: [id], onDelete: Cascade)
+  reserveId String
+  species Species @relation(fields: [speciesId], references: [id], onDelete: Cascade)
+  speciesId String
+  abundance Int @default(0)
+
+  @@unique([reserveId, speciesId])
+}
+
+model ReserveGuide {
+  id String @id @default(uuid())
+  reserve    Reserve  @relation(fields: [reserveId], references: [id], onDelete: Cascade)
+  reserveId  String
+  guide      Guide    @relation(fields: [guideId], references: [id], onDelete: Cascade)
+  guideId    String
+
+  @@unique([reserveId, guideId])
+}
+
+model EducationalContent{
+  id String @id @default(uuid())
+  title String
+  description String
+  type ContentType
+  contentUrl String?
+  imageUrl String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+enum ContentType{
+  BLOG
+  VIDEO
+}
