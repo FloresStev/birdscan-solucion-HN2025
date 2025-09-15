@@ -1,0 +1,28 @@
+version: "3.9"
+
+services:
+  postgres:
+    image: postgres:17.5
+    container_name: birdscan_postgres
+    restart: always
+    environment:
+      POSTGRES_USER: birdscan_user
+      POSTGRES_PASSWORD: birdscan2025
+      POSTGRES_DB: birdscan_db
+    ports:
+      - "5433:5432" # Cambié el puerto externo a 5433 para evitar conflicto con tu Postgres local
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  pgadmin:
+    image: dpage/pgadmin4
+    container_name: birdscan_pgadmin
+    restart: always
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@birdscan.com
+      PGADMIN_DEFAULT_PASSWORD: admin
+    ports:
+      - "8080:80"
+
+volumes:
+  postgres_data:
