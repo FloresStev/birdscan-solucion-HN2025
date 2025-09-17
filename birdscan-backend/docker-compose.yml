@@ -10,7 +10,7 @@ services:
       POSTGRES_PASSWORD: birdscan2025
       POSTGRES_DB: birdscan_db
     ports:
-      - "5433:5432" # Cambié el puerto externo a 5433 para evitar conflicto con tu Postgres local
+      - "5433:5433"
     volumes:
       - postgres_data:/var/lib/postgresql/data
 

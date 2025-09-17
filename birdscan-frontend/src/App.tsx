@@ -6,7 +6,7 @@ import Tours from "./pages/Tours.tsx";
 import Events from "./pages/Events.tsx";
 import Learn from "./pages/Educational.tsx";
 import LogIn from "./pages/LogIn.tsx";
-import SignIn from "./pages/SignIn.tsx";
+import SignIn from "./pages/SignUp.tsx";
 
 import { Routes, Route } from "react-router";
 import ProtectedRoute from "./components/Main/ProtectedRoute.tsx";

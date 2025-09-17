@@ -88,5 +88,21 @@
         "google_button": "使用Google登录",
         "account": "还没有账户？",
         "account_create": "创建账户"
+    },
+
+    "signupSection":{
+        "h1_signupsection": "创建账户，探索尼加拉瓜的鸟类世界",
+        "firstname_placeholder": "名字",
+        "lastname_placeholder": "姓氏",
+        "username_placeholder": "用户名",
+        "confirmpassword_placeholder": "确认密码",
+        "button_signup": "创建账户",
+        "account": "已有账户？",
+        "login": "登录",
+        "terms_of_service": "我接受条款与条件",
+        "type_of_user": "用户类型：",
+        "tourist": "游客",
+        "tour_guide": "导游"
     }
+
 }

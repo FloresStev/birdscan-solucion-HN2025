@@ -23,9 +23,9 @@ const LogInSection: React.FC = () => {
                 </div>
             </div>
             <div className="login_form_container">
-                <h1 className='h1_login-section'>
+                <h2 className='h2_login-section'>
                     {t("loginSection.h1_loginsection")}
-                </h1>
+                </h2>
                 <form>
                     <div className='input_container'>
                         <FontAwesomeIcon icon={faEnvelope} className="input_icon" />

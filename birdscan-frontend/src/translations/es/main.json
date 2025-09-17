@@ -88,7 +88,24 @@
         "google_button": "Iniciar Sesión con Google",
         "account": "¿Aún no tienes una cuenta?",
         "account_create": "Crear cuenta"
+    },
+
+    "signupSection":{
+        "h1_signupsection": "Crea tu cuenta y conoce las aves de Nicaragua",
+        "firstname_placeholder": "Nombre",
+        "lastname_placeholder": "Apellido",
+        "username_placeholder": "Nombre de Usuario",
+        "confirmpassword_placeholder": "Confirmar Contraseña",
+        "button_signup": "Crea una cuenta",
+        "account": "¿Ya tienes una cuenta?",
+        "login": "Inicia Sesión",
+        "terms_of_service": "Acepto los términos y condiciones",
+        "type_of_user": "Tipo de usuario:",
+        "tourist": "Turista",
+        "tour_guide": "Guía Turístico"
     }
+
+
 
 
 }
