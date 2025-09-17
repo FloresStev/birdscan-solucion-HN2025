@@ -75,5 +75,34 @@
         "reserves_h2-tittle": "探索自然保護區",
         "reserves_p": "沉浸於生物多樣性豐富、景觀獨特的保護區。探索生態系統，認識其保育重要性，親身體驗與各地自然資源的連結",
         "input_placeholder-reserves": "輸入行政區、市鎮或保護區名稱"
+    },
+
+    "loginSection":{
+        "h1_loginsection": "欢迎回来",
+        "email_placeholder": "电子邮箱",
+        "password_placeholder": "密码",
+        "checkbox_label": "记住我",
+        "link_password": "忘记密码？",
+        "button_login": "登录",
+        "div_section": "O",
+        "google_button": "使用Google登录",
+        "account": "还没有账户？",
+        "account_create": "创建账户"
+    },
+
+    "signupSection":{
+        "h1_signupsection": "创建账户，探索尼加拉瓜的鸟类世界",
+        "firstname_placeholder": "名字",
+        "lastname_placeholder": "姓氏",
+        "username_placeholder": "用户名",
+        "confirmpassword_placeholder": "确认密码",
+        "button_signup": "创建账户",
+        "account": "已有账户？",
+        "login": "登录",
+        "terms_of_service": "我接受条款与条件",
+        "type_of_user": "用户类型：",
+        "tourist": "游客",
+        "tour_guide": "导游"
     }
+
 }

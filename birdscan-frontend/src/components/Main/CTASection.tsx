@@ -18,7 +18,7 @@ const CTASection: React.FC = () =>{
                     </p>
                 </div>
                 
-                <Link to = '/signin' className = 'CTA_section-button'>
+                <Link to = '/signup' className = 'CTA_section-button'>
                     {t("ctaSection.primary_button_ctaSection")}
                 </Link>
             </div>

@@ -11,10 +11,6 @@ import Footer from "../components/Main/Footer.tsx";
 function Home() {
   return (
     <>
-      <header>
-        <Navbar />
-      </header>
-
       <main>
         <Hero />
         <AboutBS />
