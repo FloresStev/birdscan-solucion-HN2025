@@ -10,10 +10,14 @@ const api = axios.create({
 
 export default api;
 
-// types/api.ts
 export interface ApiResponse<T> {
     message: string;
     data: T;
+}
+
+export interface LoginResponse {
+    access_token: string;
+    user?: User;
 }
 
 export interface User {
@@ -24,4 +28,6 @@ export interface User {
     password: string;
     userType : string;
 }
+
+
 
