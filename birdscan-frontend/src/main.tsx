@@ -11,6 +11,7 @@ import main_ch from "./translations/ch/main.json";
 
 import { BrowserRouter } from "react-router-dom";
 import { ThemeProvider } from "./components/Main/ThemeContext.tsx";
+import { AuthProvider } from "./auth/AuthProvider.tsx";
 
 i18next.init({
   interpolation: { escapeValue: false },
@@ -32,9 +33,11 @@ createRoot(document.getElementById("root")!).render(
   <StrictMode>
     <ThemeProvider>
       <I18nextProvider i18n={i18next}>
-        <BrowserRouter>
-          <App />
-        </BrowserRouter>
+        <AuthProvider>
+          <BrowserRouter>
+            <App />
+          </BrowserRouter>
+        </AuthProvider>
       </I18nextProvider>
     </ThemeProvider>
   </StrictMode>

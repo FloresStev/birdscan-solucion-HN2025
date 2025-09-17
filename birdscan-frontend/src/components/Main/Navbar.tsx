@@ -1,6 +1,6 @@
-import React from 'react'
-import './Navbar.css'
-import BirdScan_logo from '/src/assets/BirdScan_logo.svg'
+import React from 'react';
+import './Navbar.css';
+import BirdScan_logo from '/src/assets/BirdScan_logo.svg';
 import {useTranslation} from 'react-i18next';
 import { Link } from 'react-router-dom';
 import {useTheme} from './ThemeContext.tsx';

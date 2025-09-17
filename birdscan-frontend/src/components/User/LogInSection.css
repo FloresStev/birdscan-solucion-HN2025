@@ -1,0 +1,232 @@
+.LogInSection_container {
+    display: flex;
+    width: 100vw;
+    height: calc(100vh - 134px);
+    position: relative;
+
+}
+
+.image_container-login {
+    flex: 1;
+    position: relative;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    z-index: 1;
+}
+
+.image_container-login img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.text_container {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 138px;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 1rem;
+    z-index: 2;
+}
+
+.text_container span {
+    font-family: 'Montserrat';
+    font-size: 20px;
+    font-weight: 500;
+    margin-left: 252px;
+}
+
+.login_form_container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    background-color: var(--color-surface);
+}
+
+.h1_login-section {
+    font-family: 'Poppins';
+    font-size: 64px;
+    color: var(--color-primary);
+    width: auto;
+    text-align: center;
+    margin: 0;
+    margin-bottom: 1rem;
+}
+
+.login_form_container form{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 450px;
+    gap: 1rem;
+}
+
+.login_form_container input::placeholder {
+    color: #b9b9b9;
+    font-family: 'Montserrat';
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.input_container input {
+    width: 100%;
+    padding: 0.8rem 0.8rem 0.8rem 3rem;
+    border-radius: 20px;
+    border: none;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    font-family: 'Montserrat';
+    font-size: 20px;
+    outline: none;
+    background-color: #eeeeee;
+    transition: box-shadow 0.3s ease;
+}
+
+
+.input_container input {
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+.input_container {
+    position: relative;
+    width: 100%;
+    max-width: 450px;
+}
+
+.input_container input {
+    width: 100%;
+    padding: 0.8rem 0.8rem 0.8rem 3rem;
+    border-radius: 20px;
+    border: none;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    font-family: 'Montserrat';
+    font-size: 16px;
+    outline: none;
+    transition: box-shadow 0.3s ease;
+}
+
+.input_container input:focus {
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+.input_icon {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--color-secondary);
+    font-size: 18px;
+}
+
+
+.remember_forgot {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    font-size: 18px;
+    font-family: 'Montserrat';
+    font-weight: 500;
+    color: var(--color-text-primary);
+    margin-bottom: 1rem;
+}
+
+.remember_forgot label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+}
+
+.link_login_section {
+    font-family: 'Poppins';
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--color-primary);
+    text-decoration: none;
+}
+
+.link_login_section:hover {
+    text-decoration: underline;
+}
+
+
+.btn_login{
+    background-color: var(--color-primary);
+    color: var(--color-text-primary);
+    padding: 0.8rem;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-family: 'Poppins';
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.btn_login:hover{
+    background-color: var(--color-primary-hover);
+}
+
+.divider {
+    text-align: center;
+    margin: 1rem 0;
+    font-family: 'Poppins';
+    font-size: 16px;
+    color: var(--color-text-primary);
+    position: relative;
+}
+
+
+.divider::before,
+.divider::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: 40%;
+    height: 1px;
+    background-color: var(--color-text-primary);
+}
+
+.divider::before {
+    left: 0;
+}
+
+.divider::after {
+    right: 0;
+}
+
+.google-btn {
+    background-color: #DB4437;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-family: 'Poppins';
+    font-size: 20px;
+    font-weight: 700;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+.google-btn:hover {
+    background-color: #C33D2E;
+}
+
+.createAccount{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}

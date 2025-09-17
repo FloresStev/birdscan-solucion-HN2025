@@ -75,5 +75,18 @@
         "reserves_h2-tittle": "Explore nature reserves",
         "reserves_p": "Immerse yourself in reserves full of biodiversity and unique landscapes. Explore their ecosystems, learn about their importance for conservation, and experience connecting with the natural wealth of each place",
         "input_placeholder-reserves": "Enter a department, municipality, or reserve"
+    },
+
+    "loginSection":{
+        "h1_loginsection": "Welcome back",
+        "email_placeholder": "Email",
+        "password_placeholder": "Password",
+        "checkbox_label": "Remember me",
+        "link_password": "Forgot your password?",
+        "button_login": "Log in",
+        "div_section": "Or",
+        "google_button": "Sign in with Google",
+        "account": "Don't have an account yet?",
+        "account_create": "Create account"
     }
 }
