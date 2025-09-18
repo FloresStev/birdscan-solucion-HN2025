@@ -58,7 +58,13 @@ const LogInSection: React.FC = () => {
             setModalMessage(msg);
             setModalType("error");
         }
+
     };
+
+    const handleGoogleLogin = () => {
+        window.location.href = `${api.defaults.baseURL}/api/auth/google`;
+    };
+
 
 
     return (
@@ -123,7 +129,7 @@ const LogInSection: React.FC = () => {
                     <div className="divider">
                         {t('loginSection.div_section')}
                     </div>
-                    <button className="google-btn">
+                    <button className="google-btn" onClick={handleGoogleLogin}>
                         <FontAwesomeIcon icon={faGoogle} /> {t("loginSection.google_button")}
                     </button>
 

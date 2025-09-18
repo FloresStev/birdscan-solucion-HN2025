@@ -4,7 +4,7 @@ import { LoginUserDto } from './dto/login_user.dto';
 import * as bcrypt from 'bcrypt';
 import { JwtService } from '@nestjs/jwt';
 import { PayloadEntity } from './payload';
-import { User } from '@prisma/client';
+import { Role, User } from '@prisma/client';
 
 @Injectable()
 export class AuthService {
@@ -27,6 +27,29 @@ export class AuthService {
             if (error instanceof Error) throw new InternalServerErrorException(error.message);
         }
     }
+
+    async validateGoogleUser(googleUser: {
+        email: string;
+        firstName: string;
+        lastName: string;
+    }): Promise<User> {
+        // Intentamos buscar el usuario por email
+        let user = await this.usersService.findOne(googleUser.email);
+
+        if (!user) {
+            // Si no existe, lo creamos
+            user = await this.usersService.createGoogleUser({
+                userName: googleUser.email.split('@')[0],
+                email: googleUser.email,
+                firstName: googleUser.firstName,
+                lastName: googleUser.lastName,
+                role: 'USER',
+            });
+        }
+
+        return user;
+    }
+
 
     async login(user: User) {
         const payload: PayloadEntity = {

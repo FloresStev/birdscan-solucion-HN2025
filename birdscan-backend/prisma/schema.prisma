@@ -18,7 +18,7 @@ model User{
   email String @unique
   cellphone_number String?
   userName String @unique
-  password String
+  password String?
   firstName String
   lastName String
   role Role @default(USER)

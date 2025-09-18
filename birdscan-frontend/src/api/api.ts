@@ -26,8 +26,19 @@ export interface User {
     username: string;
     email: string;
     password: string;
-    userType : string;
+    userType: string;
 }
+
+export interface GoogleLoginResponse {
+    user: {
+        firstname: string;
+        lastname: string;
+        username: string;
+        email: string;
+        userType: string;
+    };
+}
+
 
 
 

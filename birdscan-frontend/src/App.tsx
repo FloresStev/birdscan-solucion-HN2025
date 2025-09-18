@@ -12,6 +12,7 @@ import { Routes, Route } from "react-router";
 import ProtectedRoute from "./components/Main/ProtectedRoute.tsx";
 import UserProfile from "./pages/UserProfile.tsx";
 import ScrollToTop from "./components/ScrollToTop.tsx";
+import OAuthSuccess from "./components/User/OAuthSucces.tsx";
 
 function App() {
   return (
@@ -27,7 +28,9 @@ function App() {
         <Route path="/login" element={<LogIn />} />
         <Route path="/signup" element={<SignIn />} />
         <Route path="/" element={<ProtectedRoute />}>
-          <Route path="/userprofile" element={<UserProfile />} />
+        <Route path="/userprofile" element={<UserProfile />} />
+        <Route path="/oauth-success" element={<OAuthSuccess />} />
+
         </Route>
       </Routes>
     </>
