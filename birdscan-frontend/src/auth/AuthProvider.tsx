@@ -1,4 +1,4 @@
-import { useContext, createContext, useState, type ReactNode } from "react";
+import { useContext, createContext, useState, type ReactNode, useEffect } from "react";
 import type { User } from "../api/api";
 
 interface AuthContextType {
@@ -21,7 +21,7 @@ interface AuthProviderProps {
 
 export function AuthProvider({ children }: AuthProviderProps) {
     const [isAuthenticated, setIsAuthenticated] = useState(false);
-    const [user, setUser] = useState<any | null>(null);
+    const [user, setUser] = useState<User | null>(null);
 
     const login = (token: string, userData: User) => {
         localStorage.setItem("token", token);
@@ -39,15 +39,14 @@ export function AuthProvider({ children }: AuthProviderProps) {
     };
 
 
-    // Opcional: auto-login al cargar la app
-    useState(() => {
+    useEffect(() => {
         const token = localStorage.getItem("token");
         const userData = localStorage.getItem("user");
         if (token && userData) {
             setIsAuthenticated(true);
             setUser(JSON.parse(userData));
         }
-    });
+    }, []);
 
     return (
         <AuthContext.Provider value={{ isAuthenticated, login, logout, user }}>
