@@ -14,6 +14,12 @@
         "secondary_button_hero": "Planear mi visita"
     },
 
+    "userDropDown": {
+        "details": "Ver información",
+        "edit": "Editar",
+        "signout": "Cerrar sesión"
+    },
+
     "main": {
         "h2_main": "Conectamos naturaleza, turismo y conservación en Nicaragua",
         "h3_main": "BirdScan es una plataforma digital diseñada para promover el aviturismo en las áreas potegidas de Nicaragua. Aquí encontrarás informacón sobre aves residentes y migratorias, reservas naturales, eventos de conservación y podrás conectar con guías locales certificados.",

@@ -78,10 +78,10 @@ model Species{
   english_commonName String
   scientificName String
   conservationStatus String
-  status String
-  description String
-  imageUrl String
-  distribution String
+  status String[]
+  description String?
+  imageUrl String?
+  distribution String?
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 

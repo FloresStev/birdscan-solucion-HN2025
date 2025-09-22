@@ -14,6 +14,12 @@
         "secondary_button_hero": "Plan my visit"
     },
 
+    "userDropDown": {
+        "details": "View information",
+        "edit": "Edit",
+        "signout": "Sign Out"
+    },
+
     "main": {
         "h2_main": "We connect nature, tourism, and conservation in Nicaragua",
         "h3_main": "BirdScan is a digital platform designed to promote birdwatching tourism in Nicaragua's protected areas. Here you will find information about resident and migratory birds, nature reserves, conservation events, and you can connect with certified local guides",

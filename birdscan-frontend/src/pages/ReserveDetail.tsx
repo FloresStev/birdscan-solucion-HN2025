@@ -1,15 +1,12 @@
 import React from "react";
 
-const Birds: React.FC = () => {
+const ReserveDetail: React.FC = () => {
 
     return (
 
         <>
-        
         </>
-
     );
-
 };
 
-export default Birds;
+export default ReserveDetail;

@@ -1,26 +1,88 @@
-import { Injectable } from '@nestjs/common';
-import { CreateBirdDto } from './dto/create-bird.dto';
-import { UpdateBirdDto } from './dto/update-bird.dto';
+import { BadRequestException, Injectable, InternalServerErrorException, NotFoundException } from '@nestjs/common';
+
+import { PrismaService } from 'src/prisma/prisma.service';
 
 @Injectable()
 export class BirdsService {
-  create(createBirdDto: CreateBirdDto) {
-    return 'This action adds a new bird';
+  constructor(private prisma: PrismaService) {
+
   }
 
-  findAll() {
-    return `This action returns all birds`;
+
+  async findAll() {
+    try {
+      const birds = await this.prisma.species.findMany({
+        select: {
+          spanish_commonName: true,
+          english_commonName: true,
+          scientificName: true,
+          conservationStatus: true,
+          status: true,
+          description: true,
+          imageUrl: true,
+          distribution: true,
+        },
+      });
+      return birds;
+    } catch (error) {
+      console.error('Error fetching birds:', error);
+      throw new InternalServerErrorException(error instanceof Error ? error.message : 'Unknown error');
+    }
   }
 
-  findOne(id: number) {
-    return `This action returns a #${id} bird`;
+  async getSpecieByName(
+    scientificName?: string,
+    english_commonName?: string,
+    spanish_commonName?: string,
+  ) {
+    try {
+      const orConditions: any[] = [];
+      if (scientificName) orConditions.push({ scientificName });
+      if (english_commonName) orConditions.push({ english_commonName });
+      if (spanish_commonName) orConditions.push({ spanish_commonName });
+
+      if (orConditions.length === 0) {
+        throw new BadRequestException("At least one query parameter is required");
+      }
+
+      const bird = await this.prisma.species.findFirst({
+        where: {
+          OR: orConditions,
+        },
+      });
+
+      if (!bird) throw new NotFoundException("Specie not found");
+
+      return bird;
+    } catch (error) {
+      if (error instanceof NotFoundException || error instanceof BadRequestException) throw error;
+      throw new InternalServerErrorException(error.message);
+    }
   }
 
-  update(id: number, updateBirdDto: UpdateBirdDto) {
-    return `This action updates a #${id} bird`;
+  async getEndangeredSpecies() {
+    try {
+      const endangered = await this.prisma.species.findMany({
+        where: {
+          conservationStatus: {
+            in: ["EN", "CR", "VU"],
+          },
+        },
+        select: {
+          spanish_commonName: true,
+          english_commonName: true,
+          scientificName: true,
+          conservationStatus: true,
+          description: true,
+          imageUrl: true,
+          distribution: true,
+          status: true,
+        },
+      });
+      return endangered;
+    } catch (error) {
+      throw new InternalServerErrorException(error instanceof Error ? error.message : "Unknown error");
+    }
   }
 
-  remove(id: number) {
-    return `This action removes a #${id} bird`;
-  }
 }

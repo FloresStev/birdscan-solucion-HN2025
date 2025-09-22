@@ -4,10 +4,12 @@ import { Link, useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faRightFromBracket, faCircleInfo, faPenToSquare, faUserCircle } from "@fortawesome/free-solid-svg-icons";
 import { useAuth } from "../../auth/AuthProvider";
+import { useTranslation } from "react-i18next";
 
 
 
 const UserDropDown: React.FC = () => {
+    const [t, i18n] = useTranslation('main');
 
     const { user, logout } = useAuth();
 
@@ -63,15 +65,15 @@ const UserDropDown: React.FC = () => {
 
                     <div className="account_option">
                         <Link to="/userprofile">
-                            <FontAwesomeIcon icon={faCircleInfo} /> Ver información
+                            <FontAwesomeIcon icon={faCircleInfo} /> {t("userDropDown.details")}
                         </Link>
                         <Link to="/editprofile">
-                            <FontAwesomeIcon icon={faPenToSquare} /> Editar
+                            <FontAwesomeIcon icon={faPenToSquare} /> {t("userDropDown.edit")}
                         </Link>
                     </div>
 
                     <button className="logout-btn" onClick={handleLogout}>
-                        <FontAwesomeIcon icon={faRightFromBracket} /> Cerrar sesión
+                        <FontAwesomeIcon icon={faRightFromBracket} /> {t("userDropDown.signout")}
                     </button>
                 </div>
             </div >

@@ -45,7 +45,7 @@ const ExploreSection: React.FC = () => {
                         <FontAwesomeIcon icon={faSearch} className="search-icon" />
                     </form>
                     
-                    <Link className = "explore_link" to='/reserves'>
+                    <Link className = "explore_link" to='/naturalreserves'>
                         {t("explore.sealls_link")}
                     </Link>
                 </div>

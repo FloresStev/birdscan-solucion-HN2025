@@ -7,12 +7,15 @@ import Events from "./pages/Events.tsx";
 import Learn from "./pages/Educational.tsx";
 import LogIn from "./pages/LogIn.tsx";
 import SignIn from "./pages/SignUp.tsx";
+import Birds from "./pages/Birds.tsx";
 
 import { Routes, Route } from "react-router";
 import ProtectedRoute from "./components/Main/ProtectedRoute.tsx";
 import UserProfile from "./pages/UserProfile.tsx";
 import ScrollToTop from "./components/ScrollToTop.tsx";
 import OAuthSuccess from "./components/User/OAuthSucces.tsx";
+import NaturalReserves from "./pages/NaturalReserves.tsx";
+import EditProfile from "./pages/EditProfile.tsx";
 
 function App() {
   return (
@@ -27,9 +30,12 @@ function App() {
         <Route path="/learn" element={<Learn />} />
         <Route path="/login" element={<LogIn />} />
         <Route path="/signup" element={<SignIn />} />
-        <Route path="/" element={<ProtectedRoute />}>
-        <Route path="/userprofile" element={<UserProfile />} />
-        <Route path="/oauth-success" element={<OAuthSuccess />} />
+        <Route element={<ProtectedRoute />}>
+          <Route path="/userprofile" element={<UserProfile />}/>
+          <Route path="/oauth-success" element={<OAuthSuccess />} />
+          <Route path="/birds" element={<Birds />} />
+          <Route path="/naturalreserves" element={<NaturalReserves />} />
+          <Route path="/editprofile" element = {<EditProfile />} />
 
         </Route>
       </Routes>
