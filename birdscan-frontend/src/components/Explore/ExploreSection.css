@@ -5,7 +5,6 @@
     display:flex;
     justify-content: center;
     align-items: center;
-    margin-top: 132px;
 }
 
 .explore_species-container {
@@ -64,7 +63,7 @@
     font-family: 'Poppins';
     font-weight: 700;
     font-size: 38px;
-    color: var(--background-color);
+    color: var #F5F5F5;
     margin-bottom: 60px;
 }
 
@@ -72,7 +71,7 @@
     font-family: 'Montserrat';
     font-size: 20px;
     font-weight: 400;
-    color: var(--background-color);
+    color: #F5F5F5;
     margin-bottom: 60px;
     margin-right: 144px;
 }
@@ -86,7 +85,7 @@
     max-width: 500px;
     height: 60px;
     margin-bottom: 20px;
-    background: #ffffff;
+    background: var(--color-surface);
     border-radius: 50px;
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     transition: all 0.3s ease;
@@ -105,6 +104,8 @@
     font-family: 'Montserrat';
     font-weight: 500;
     border-radius: 50px;
+    background: var(--color-surface);
+    color: var(--color-text-primary);
 }
 
 .search-icon {
@@ -112,7 +113,7 @@
     right: 10px;
     top: 50%;
     transform: translateY(-50%);
-    color: #888;
+    color: var(--color-text-secondary);
     cursor: pointer;
 }
 
@@ -120,10 +121,10 @@
     font-family: 'Poppins';
     font-size: 18px;
     font-weight: 600;
-    color: var(--background-color);
+    color: #F5F5F5;
     cursor: pointer;
 }
 
 .explore_link:hover{
-    color: var(--details-color);
+    color: var(--color-details);
 }

@@ -1,6 +1,6 @@
 .birdscanMultiplatform_section {
     margin-top: 20px;
-    background-color: var(--secondary-color);
+    background-color: var(--color-surface);
     width: 100%;
 }
 
@@ -33,14 +33,14 @@
 .h2_birdscan_multiplatform{
     font-size: 26px;
     font-weight: 500;
-    color: var(--background-color);
+    color: var(--color-text-primary);
 }
 
 .p_birdscan_multiplatform{
     font-family: 'Montserrat';
     font-size: 20px;
     font-weight: 400;
-    color: var(--background-color);
+    color: var(--color-text-primary);
     width: 566px;
 }
 
@@ -48,11 +48,11 @@
     width: 260px;
     height: 60px;
     border-radius: 20px;
-    border: 2px solid var(--background-color);
+    border: 2px solid var(--color-secondary);
     display:flex;
     align-items: center;
     justify-content: center;
-    color: var(--background-color);
+    color: var(--color-text-primary);
     transition: 0.3s;
     font-weight: 700;
     font-size: 20px;
@@ -60,6 +60,6 @@
 }
 
 .learnmore_button:hover{
-    background-color: var(--details-color);
+    background-color: var(--color-details);
 }
 

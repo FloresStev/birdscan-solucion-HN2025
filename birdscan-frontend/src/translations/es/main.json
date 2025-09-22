@@ -1,11 +1,13 @@
 {
     "header":{
+        "setLanguage": "Seleccionar Idioma",
         "home": "Inicio",
         "explore": "Explorar",
         "tours": "Tours",
         "events": "Eventos",
         "learn": "Aprende",
         "login": "Iniciar Sesión",
+        "signup": "Registrate",
         "h1_header": "Descubre Nicaragua a través de sus aves",
         "h2_header_hero": "Planea tus recorridos, identifica especies y apoya el turismo responsable en nuestras reservas naturales",
         "primary_button_hero": "Ver catálogo de aves",
@@ -74,7 +76,37 @@
         "reserves_h2-title": "Explorar reservas naturales",
         "reserves_p": "Sumérgete en reservas llenas de biodiversidad y paisajes únicos. Explora sus ecosistemas, conoce su importancia para la conservación y vive la experiencia de conectar con la riqueza natural de cada lugar.",
         "input_placeholder-reserves": "Introduzca un departamento, municipio o reserva"
+    },
+
+    "loginSection":{
+        "h1_loginsection": "Bienvenido de vuelta",
+        "email_placeholder": "Correo electrónico",
+        "password_placeholder": "Contraseña",
+        "checkbox_label": "Recuérdame",
+        "link_password": "¿Has olvidado tu contraseña?",
+        "button_login": "Acceder",
+        "div_section": "O",
+        "google_button": "Iniciar Sesión con Google",
+        "account": "¿Aún no tienes una cuenta?",
+        "account_create": "Crear cuenta"
+    },
+
+    "signupSection":{
+        "h1_signupsection": "Crea tu cuenta y conoce las aves de Nicaragua",
+        "firstname_placeholder": "Nombre",
+        "lastname_placeholder": "Apellido",
+        "username_placeholder": "Nombre de Usuario",
+        "confirmpassword_placeholder": "Confirmar Contraseña",
+        "button_signup": "Crea una cuenta",
+        "account": "¿Ya tienes una cuenta?",
+        "login": "Inicia Sesión",
+        "terms_of_service": "Acepto los términos y condiciones",
+        "type_of_user": "Tipo de usuario:",
+        "tourist": "Turista",
+        "tour_guide": "Guía Turístico"
     }
+
+
 
 
 }

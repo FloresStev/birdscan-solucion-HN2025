@@ -1,11 +1,13 @@
 {
     "header":{
+        "setLanguage": "Select Language",
         "home": "Home",
         "explore": "Explore",
         "tours": "Tours",
         "events": "Events",
         "learn": "Learn",
         "login": "Log In",
+        "signup": "Sign Up",
         "h1_header" : "Discover Nicaragua through its birds",
         "h2_header_hero": "Plan your trips, identify species, and support responsible tourism in our nature reserves.",
         "primary_button_hero": "View bird catalog",
@@ -74,5 +76,36 @@
         "reserves_h2-tittle": "Explore nature reserves",
         "reserves_p": "Immerse yourself in reserves full of biodiversity and unique landscapes. Explore their ecosystems, learn about their importance for conservation, and experience connecting with the natural wealth of each place",
         "input_placeholder-reserves": "Enter a department, municipality, or reserve"
+    },
+
+    "loginSection":{
+        "h1_loginsection": "Welcome back",
+        "email_placeholder": "Email",
+        "password_placeholder": "Password",
+        "checkbox_label": "Remember me",
+        "link_password": "Forgot your password?",
+        "button_login": "Log in",
+        "div_section": "Or",
+        "google_button": "Sign in with Google",
+        "account": "Don't have an account yet?",
+        "account_create": "Create account"
+    },
+
+    "signupSection":{
+        "h1_signupsection": "Create your account and learn about the birds of Nicaragua",
+        "firstname_placeholder": "First name",
+        "lastname_placeholder": "Last name",
+        "username_placeholder": "Username",
+        "confirmpassword_placeholder": "Confirm Password",
+        "button_signup": "Create an account",
+        "account": "Already have an account?",
+        "login": "Log in",
+        "terms_of_service": "I accept the terms and conditions",
+        "type_of_user": "Type of user:",
+        "tourist": "Tourist",
+        "tour_guide": "Tour guide"
     }
+
+
+
 }
