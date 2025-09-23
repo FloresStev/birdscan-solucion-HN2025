@@ -41,28 +41,20 @@ export class UsersService {
     return result;
   }
 
-  async createGoogleUser(body: CreateGoogleUserDto) {
-    const existingUser = await this.prisma.user.findFirst({
-        where: { OR: [{ email: body.email }, { userName: body.userName }] },
+  async createGoogleUser(dto: CreateGoogleUserDto) {
+    const user = await this.prisma.user.create({
+      data: {
+        userName: dto.userName,
+        firstName: dto.firstName,
+        lastName: dto.lastName,
+        email: dto.email,
+        role: dto.role,
+        cellphone_number: dto.cellphone_number ?? '',
+        password: null,
+      },
     });
-
-    if (existingUser) {
-        throw new BadRequestException('El correo o nombre de usuario ya existe');
-    }
-
-    const newUser = await this.prisma.user.create({
-        data: {
-            userName: body.userName,
-            email: body.email,
-            firstName: body.firstName,
-            lastName: body.lastName,
-            role: body.role ?? 'USER',
-        },
-    });
-
-    return newUser;
-}
-
+    return user;
+  }
 
 
   async findAll() {
@@ -99,6 +91,13 @@ export class UsersService {
       if (error instanceof Error) throw new InternalServerErrorException(error.message);
     }
   }
+
+  async findByEmail(email: string) {
+    return this.prisma.user.findUnique({
+      where: { email },
+    });
+  }
+
 
   update(id: number, updateUserDto: UpdateUserDto) {
     return `This action updates a #${id} user`;

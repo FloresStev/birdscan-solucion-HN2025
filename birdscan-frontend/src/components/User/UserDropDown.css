@@ -49,8 +49,8 @@
     border: 1px solid #ddd;
     border-radius: 10px;
     width: 100%;
-    max-width: 280px;
-    min-width: 260px;
+    max-width: 340px;
+    min-width: 300px;
     padding: 1rem;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     z-index: 100;

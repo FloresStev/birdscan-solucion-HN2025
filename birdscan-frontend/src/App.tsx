@@ -30,12 +30,13 @@ function App() {
         <Route path="/learn" element={<Learn />} />
         <Route path="/login" element={<LogIn />} />
         <Route path="/signup" element={<SignIn />} />
+        <Route path="/oauth-success" element={<OAuthSuccess />} />
         <Route element={<ProtectedRoute />}>
-          <Route path="/userprofile" element={<UserProfile />}/>
-          <Route path="/oauth-success" element={<OAuthSuccess />} />
+          <Route path="/userprofile" element={<UserProfile />} />
           <Route path="/birds" element={<Birds />} />
           <Route path="/naturalreserves" element={<NaturalReserves />} />
-          <Route path="/editprofile" element = {<EditProfile />} />
+          <Route path="/editprofile" element={<EditProfile />} />
+
 
         </Route>
       </Routes>

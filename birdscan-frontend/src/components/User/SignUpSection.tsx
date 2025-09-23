@@ -7,14 +7,17 @@ import {
     faUser,
     faIdCard,
 } from "@fortawesome/free-solid-svg-icons";
-import api, { type ApiResponse, type User } from "../../api/api.ts";
+import api, { type User } from "../../api/api.ts";
 import ModalView from "./ModalView.tsx";
 import { useNavigate } from "react-router-dom";
 
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
+import { useAuth } from "../../auth/AuthProvider.tsx";
 
 const SignUpSection: React.FC = () => {
+
+    const { login } = useAuth();
 
     const navigate = useNavigate();
 
@@ -54,17 +57,17 @@ const SignUpSection: React.FC = () => {
 
         try {
             const { confirmPassword, ...payload } = user;
-            const res = await api.post<ApiResponse<User>>("/api/users/register", payload);
+            const res = await api.post<{ access_token: string; data: User; message: string }>("/api/users/register", payload);
 
-            // Éxito
+            login(res.data.access_token, res.data.data);
+
             setModalMessage(res.data.message);
             setModalType("success");
 
-            // Aquí puedes redirigir después de unos segundos si quieres
             setTimeout(() => {
                 setModalMessage(null);
-                navigate("/"); // redirige
-            }, 2000);
+                navigate("/");
+            }, 1500);
 
         } catch (error: any) {
             const msg = Array.isArray(error.response?.data?.message)

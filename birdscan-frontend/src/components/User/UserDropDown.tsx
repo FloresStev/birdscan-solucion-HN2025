@@ -5,10 +5,16 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faRightFromBracket, faCircleInfo, faPenToSquare, faUserCircle } from "@fortawesome/free-solid-svg-icons";
 import { useAuth } from "../../auth/AuthProvider";
 import { useTranslation } from "react-i18next";
+import api from "../../api/api";
+
+import axios from "axios";
 
 
 
 const UserDropDown: React.FC = () => {
+    
+    const navigate = useNavigate();
+
     const [t, i18n] = useTranslation('main');
 
     const { user, logout } = useAuth();
@@ -19,15 +25,36 @@ const UserDropDown: React.FC = () => {
         return f + l || "?";
     };
 
-    const fullName = `${user?.firstName || ""} ${user?.lastName || ""}`.trim();
+    const fullName = user?.firstName
+        ? user.firstName + (user.lastName ? ` ${user.lastName}` : "")
+        : "Usuario";
 
-    const navigate = useNavigate();
+    const handleLogout = async () => {
+        const token = localStorage.getItem("token");
 
-    const handleLogout = () => {
-        logout();
-        navigate("/");
-        window.location.reload();
-    }
+        if (!token) {
+            console.warn("No hay token disponible para cerrar sesión.");
+            logout();
+            navigate("/login");
+            return;
+        }
+
+        try {
+            await axios.post(`${api.defaults.baseURL}/api/auth/logout`, {}, {
+                headers: {
+                    Authorization: `Bearer ${token}`,
+                },
+                withCredentials: true,
+            });
+
+            logout();
+            navigate("/login");
+        } catch (error) {
+            console.error("Error al cerrar sesión:", error);
+        }
+    };
+
+
 
     return (
         <>

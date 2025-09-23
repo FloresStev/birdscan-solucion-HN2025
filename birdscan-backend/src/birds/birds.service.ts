@@ -30,6 +30,40 @@ export class BirdsService {
     }
   }
 
+  async findMany({ skip, take }: { skip: number; take: number }) {
+    try {
+      const birds = await this.prisma.species.findMany({
+        skip,
+        take,
+        orderBy: { spanish_commonName: 'asc' },
+        select: {
+          spanish_commonName: true,
+          english_commonName: true,
+          scientificName: true,
+          conservationStatus: true,
+          status: true,
+          description: true,
+          imageUrl: true,
+          distribution: true,
+        },
+      });
+      return birds;
+    } catch (error) {
+      console.error('Error fetching paginated birds:', error);
+      throw new InternalServerErrorException(error instanceof Error ? error.message : 'Unknown error');
+    }
+  }
+
+  async count() {
+    try {
+      return await this.prisma.species.count();
+    } catch (error) {
+      console.error('Error counting birds:', error);
+      throw new InternalServerErrorException(error instanceof Error ? error.message : 'Unknown error');
+    }
+  }
+
+
   async getSpecieByName(
     scientificName?: string,
     english_commonName?: string,

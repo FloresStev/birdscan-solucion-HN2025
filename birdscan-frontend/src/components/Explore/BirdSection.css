@@ -1,0 +1,92 @@
+.h2-tittle-birds{
+    margin-top: 20px;
+    font-family: 'Poppins';
+    font-size: 2.34rem;
+    color: var(--color-primary);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.catalog-grid {
+    display: grid;
+    width: 1704px;
+    grid-template-columns: repeat(5, minmax(220px, 1fr));
+    gap: 1.5rem;
+    padding: 2rem 1rem;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+.observation-card {
+    background-color: var(--color-surface);
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: box-shadow 0.3s ease;
+}
+
+.observation-card:hover {
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+}
+
+.observation-image {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+    background-color: #d8d8d8;
+}
+
+.observation-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+
+.observation-image:hover img {
+    filter: brightness(1.4);
+    cursor: pointer;
+}
+
+
+
+.observation-info {
+    padding: 0.75rem 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.common-name {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--color-text-primary);
+}
+
+.common-name:hover {
+    color: var(--color-primary-hover);
+    cursor: pointer;
+}
+
+.scientific-name {
+    font-family: 'Montserrat', sans-serif;
+    font-style: italic;
+    font-size: 0.9rem;
+    color: var(--color-text-secondary);
+}
+
+.scientific-name:hover{
+    color: var(--color-secondary-hover);
+    cursor: pointer;
+}
+
+
+.meta {
+    font-size: 0.75rem;
+    color: var(--color-text-secondary);
+}

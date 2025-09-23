@@ -1,14 +1,16 @@
 import React from "react";
 import "./MapsSection.css";
 import {useTranslation} from 'react-i18next';
+import mapaReservas from "../../assets/Mapa_reservas.jpg";
+import { Link } from "react-router-dom";
 
 const MapsSection: React.FC = () => {
     const [t, i18n] = useTranslation('main');
     return (
         <section className = 'maps_section-container'>
             
-            <div className = 'maps-container'> {/* TODO: Agregar mapa de las reservas de Nicaragua */}
-
+            <div className = 'maps-container'> 
+                <img src = {mapaReservas}/>
             </div>
 
             <div className = 'maps_content-container'>
@@ -20,9 +22,9 @@ const MapsSection: React.FC = () => {
                     {t("mapsSection.p_mapsSection")}
                 </p>
 
-                <a className = 'button_maps-section'>
+                <Link to=  '/maps' className = 'button_maps-section'>
                     {t("mapsSection.primary_button_mapsSection")}
-                </a>
+                </Link>
             </div>
 
         </section>

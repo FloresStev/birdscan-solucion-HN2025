@@ -8,11 +8,21 @@ export class BirdsController {
   constructor(private readonly birdsService: BirdsService) { }
 
   @Get('all')
-  async findAll() {
-    const birds = await this.birdsService.findAll();
+  async findAll(
+    @Query('page') page: number = 1,
+    @Query('limit') limit: number = 20
+  ) {
+    const skip = (page - 1) * limit;
+    const birds = await this.birdsService.findMany({ skip, take: limit });
+    const total = await this.birdsService.count();
+
     return {
       message: 'Aves obtenidas con éxito',
       data: birds,
+      total,
+      page,
+      totalPages: Math.ceil(total / limit),
+
     };
   }
 

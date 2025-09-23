@@ -24,8 +24,11 @@ const ExploreSection: React.FC = () => {
                         <input className = "explore_input" type="text" placeholder = {t("explore.input_placeholder-species")} id="text_speciesSearch"></input>
                         <FontAwesomeIcon icon={faSearch} className="search-icon" />
                     </form>
-                    <Link className = "explore_link" to = '/birds' >
+                    <Link className = "explore_link" to = '/birds?filter=all' >
                         {t("explore.sealls_link")}
+                    </Link>
+                    <Link className = "explore_link" to = '/birds?filter=endangered' >
+                        {t("explore.seEndangered_link")}
                     </Link>
                 </div>
 
