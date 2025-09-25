@@ -4,6 +4,7 @@
     left: 0;
     width: 100vw;
     height: 100vh;
+    min-height: 1080px;
     background-image: url('/src/assets/Guardabarranco.jpg');
     background-size: cover;
     background-position: center;
@@ -41,7 +42,7 @@
     display: flex;
     width: 250px;
     height: 70px;
-    font-size: 20px;
+    font-size: 1.25rem;
     border: none;
     border-radius: 10px;
     cursor: pointer;
@@ -71,14 +72,14 @@
 }
 
 h1{
-    font-size: 64px;
+    font-size: 4rem;
     margin-bottom: 20px;
     margin-left: 136px;
     font-weight: 700;
 }
 
 .h2_hero_section{
-    font-size: 38px;
+    font-size: 2.38rem;
     margin-bottom: 40px;
     margin-left: 136px;
     font-weight: 600;

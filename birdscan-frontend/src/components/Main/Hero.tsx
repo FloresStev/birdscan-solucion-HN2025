@@ -1,6 +1,7 @@
 import React from 'react'
 import './Hero.css'
 import {useTranslation} from 'react-i18next';
+import { Link } from 'react-router-dom';
 
 const Hero: React.FC = () => {
     const [t, i18n] = useTranslation('main');
@@ -17,12 +18,12 @@ const Hero: React.FC = () => {
                 </h2>
                 <div className='hero_actions'>
 
-                    <a className = 'primary_button' href=''>
+                    <Link to = '/birds' className = 'primary_button'>
                         {t('header.primary_button_hero')}
-                    </a>
-                    <a className = 'secondary_button' href=''>
+                    </Link>
+                    <Link to = '/tours' className = 'secondary_button'>
                         {t("header.secondary_button_hero")}
-                    </a>
+                    </Link>
 
                 </div>
             </div>

@@ -18,7 +18,7 @@ model User{
   email String @unique
   cellphone_number String?
   userName String @unique
-  password String
+  password String?
   firstName String
   lastName String
   role Role @default(USER)
@@ -55,7 +55,8 @@ model Reserve {
   id String @id @default(uuid())
   name String
   description String
-  location String
+  department String
+  municipality String
   area Float
   latitude Float
   longitude Float 
@@ -64,9 +65,15 @@ model Reserve {
   activities String[]
   protected_area_type String
   images String[]
-  entrance_fee Float
+  entrance_fee String
+  opening_hours String
+  services String
+  attraction String
+  site String?
+  phone String?
+  email String?
 
-  speccies ReserveSpecies[]
+  species ReserveSpecies[]
   guides ReserveGuide[]
   events Event[]
   observations SpeciesObservation[] 
@@ -78,10 +85,10 @@ model Species{
   english_commonName String
   scientificName String
   conservationStatus String
-  status String
-  description String
-  imageUrl String
-  distribution String
+  status String[]
+  description String?
+  imageUrl String?
+  distribution String?
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 
@@ -133,6 +140,8 @@ model ReserveSpecies{
   species Species @relation(fields: [speciesId], references: [id], onDelete: Cascade)
   speciesId String
   abundance Int @default(0)
+  seasonality String?
+  presenceLevel String?
 
   @@unique([reserveId, speciesId])
 }

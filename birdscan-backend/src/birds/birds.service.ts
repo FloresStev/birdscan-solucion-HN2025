@@ -1,26 +1,170 @@
-import { Injectable } from '@nestjs/common';
-import { CreateBirdDto } from './dto/create-bird.dto';
-import { UpdateBirdDto } from './dto/update-bird.dto';
+import { BadRequestException, Injectable, InternalServerErrorException, NotFoundException } from '@nestjs/common';
+import { Prisma } from '@prisma/client';
+
+import { PrismaService } from 'src/prisma/prisma.service';
 
 @Injectable()
 export class BirdsService {
-  create(createBirdDto: CreateBirdDto) {
-    return 'This action adds a new bird';
+  constructor(private prisma: PrismaService) {
+
   }
 
-  findAll() {
-    return `This action returns all birds`;
+
+  async findAll() {
+    try {
+      const birds = await this.prisma.species.findMany({
+        select: {
+          id: true,
+          spanish_commonName: true,
+          english_commonName: true,
+          scientificName: true,
+          conservationStatus: true,
+          status: true,
+          description: true,
+          imageUrl: true,
+          distribution: true,
+        },
+      });
+      return birds;
+    } catch (error) {
+      console.error('Error fetching birds:', error);
+      throw new InternalServerErrorException(error instanceof Error ? error.message : 'Unknown error');
+    }
   }
 
-  findOne(id: number) {
-    return `This action returns a #${id} bird`;
+  async findMany({ skip, take }: { skip: number; take: number }) {
+    try {
+      const birds = await this.prisma.species.findMany({
+        skip,
+        take,
+        orderBy: { spanish_commonName: 'asc' },
+        select: {
+          id: true,
+          spanish_commonName: true,
+          english_commonName: true,
+          scientificName: true,
+          conservationStatus: true,
+          status: true,
+          description: true,
+          imageUrl: true,
+          distribution: true,
+        },
+      });
+      return birds;
+    } catch (error) {
+      console.error('Error fetching paginated birds:', error);
+      throw new InternalServerErrorException(error instanceof Error ? error.message : 'Unknown error');
+    }
   }
 
-  update(id: number, updateBirdDto: UpdateBirdDto) {
-    return `This action updates a #${id} bird`;
+  async count() {
+    try {
+      return await this.prisma.species.count();
+    } catch (error) {
+      console.error('Error counting birds:', error);
+      throw new InternalServerErrorException(error instanceof Error ? error.message : 'Unknown error');
+    }
   }
 
-  remove(id: number) {
-    return `This action removes a #${id} bird`;
+
+  async searchByAnyName(query: string) {
+    return this.prisma.species.findMany({
+      where: {
+        OR: [
+          { scientificName: { contains: query, mode: 'insensitive' } },
+          { english_commonName: { contains: query, mode: 'insensitive' } },
+          { spanish_commonName: { contains: query, mode: 'insensitive' } },
+        ],
+      },
+      select: {
+        id: true,
+        spanish_commonName: true,
+        english_commonName: true,
+        scientificName: true,
+        conservationStatus: true,
+        description: true,
+        imageUrl: true,
+        distribution: true,
+        status: true,
+      },
+    });
   }
+
+  async getEndangeredSpecies(statusCodes?: string[]) {
+    try {
+      const whereClause: Prisma.SpeciesWhereInput = {
+        conservationStatus: {
+          in: ['EN', 'CR', 'VU'], // especies en peligro
+        },
+        ...(statusCodes?.length && {
+          status: {
+            hasSome: statusCodes,
+          },
+        }),
+      };
+
+      const endangered = await this.prisma.species.findMany({
+        where: whereClause,
+        select: {
+          id: true,
+          spanish_commonName: true,
+          english_commonName: true,
+          scientificName: true,
+          conservationStatus: true,
+          description: true,
+          imageUrl: true,
+          distribution: true,
+          status: true,
+        },
+      });
+
+      return endangered;
+    } catch (error) {
+      throw new InternalServerErrorException(
+        error instanceof Error ? error.message : 'Unknown error'
+      );
+    }
+  }
+
+  async getSpeciesByStatus(status: string[], skip: number, take: number) {
+    return await this.prisma.species.findMany({
+      where: {
+        status: {
+          hasSome: status,
+        },
+      },
+      skip,
+      take,
+      select: {
+        id: true,
+        spanish_commonName: true,
+        english_commonName: true,
+        scientificName: true,
+        conservationStatus: true,
+        description: true,
+        imageUrl: true,
+        distribution: true,
+        status: true,
+      },
+    });
+  }
+
+  async countSpeciesByStatus(status: string[]) {
+    return await this.prisma.species.count({
+      where: {
+        status: {
+          hasSome: status,
+        },
+      },
+    });
+  }
+
+  async getSpeciesById(id: string) {
+    const bird = await this.prisma.species.findFirst({ where: { id } });
+
+    if (!bird) throw new NotFoundException(`Especie con id: ${id} no encontrada`);
+
+    return bird;
+  }
+
 }
