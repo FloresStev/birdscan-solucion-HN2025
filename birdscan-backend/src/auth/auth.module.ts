@@ -9,6 +9,7 @@ import { SECRET } from 'constants/jwt-key';
 import { JwtStrategy } from './strategy/jwt.strategy';
 import { PrismaService } from 'src/prisma/prisma.service';
 import { GoogleStrategy } from './strategy/google.strategy';
+
 import { RedisModule } from '../redis/redis.module';
 
 

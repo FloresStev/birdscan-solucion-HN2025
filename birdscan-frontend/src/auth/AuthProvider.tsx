@@ -1,4 +1,6 @@
+
 import {useContext, createContext, useState, useEffect, type ReactNode } from "react";
+
 import type { User } from "../api/api";
 
 interface AuthContextType {
@@ -6,6 +8,7 @@ interface AuthContextType {
     login: (token: string, user: any) => void;
     logout: () => void;
     user: any | null;
+
     loading: boolean;
 }
 
@@ -24,7 +27,9 @@ interface AuthProviderProps {
 export function AuthProvider({ children }: AuthProviderProps) {
     const [isAuthenticated, setIsAuthenticated] = useState(false);
     const [user, setUser] = useState<User | null>(null);
-    const [loading, setLoading] = useState(true); // ✅ ahora está dentro del componente
+
+    const [loading, setLoading] = useState(true); 
+
 
     const login = (token: string, userData: User) => {
         localStorage.setItem("token", token);
@@ -32,6 +37,7 @@ export function AuthProvider({ children }: AuthProviderProps) {
         setUser(userData);
         setIsAuthenticated(true);
     };
+
 
     const logout = () => {
         localStorage.removeItem("token");
@@ -61,6 +67,7 @@ export function AuthProvider({ children }: AuthProviderProps) {
     }, []);
 
     return (
+
         <AuthContext.Provider
             value={{ isAuthenticated, login, logout, user, loading }}
         >
