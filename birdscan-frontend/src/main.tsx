@@ -8,6 +8,7 @@ import i18next from "i18next";
 import main_es from "./translations/es/main.json";
 import main_en from "./translations/en/main.json";
 import main_ch from "./translations/ch/main.json";
+import main_rs from "./translations/rs/main.json";
 
 import { BrowserRouter } from "react-router-dom";
 import { ThemeProvider } from "./components/Main/ThemeContext.tsx";
@@ -25,6 +26,9 @@ i18next.init({
     },
     ch: {
       main: main_ch,
+    },
+    rs: {
+      main: main_rs,
     },
   },
 });

@@ -30,7 +30,7 @@
 }
 
 .h2_maps-section{
-    font-size: 38px;
+    font-size: 2.4rem;
     font-weight: 600;
     color: var(--color-text-primary);
     text-align: left;
@@ -43,7 +43,7 @@
     text-align: left;
     margin-left: 15px;
     font-family: 'Montserrat';
-    font-size: 20px;
+    font-size: 1.3rem;
     font-weight: 300;
     color: var(--color-text-primary);
     width: 417px;
@@ -56,11 +56,12 @@
     border: 2px solid var(--color-secondary);
     width: 392px;
     height: 80px;
-    font-size: 20px;
+    font-size: 1.3rem;
     font-weight: 700;
     display: flex;
     align-items: center;
     justify-content: center;
+    text-align: center;
     color: var(--color-secondary);
     cursor: pointer;
     transition: 0.3s;

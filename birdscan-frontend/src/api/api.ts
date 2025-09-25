@@ -43,6 +43,7 @@ export interface GoogleLoginResponse {
 }
 
 export interface Bird {
+    id: string;
     spanish_commonName: string;
     english_commonName: string;
     scientificName: string;

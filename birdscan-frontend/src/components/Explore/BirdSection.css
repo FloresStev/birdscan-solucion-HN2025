@@ -1,4 +1,4 @@
-.h2-tittle-birds{
+.h2-tittle-birds {
     margin-top: 20px;
     font-family: 'Poppins';
     font-size: 2.34rem;
@@ -7,6 +7,51 @@
     justify-content: center;
     align-items: center;
 }
+
+.clear-search-button {
+    margin: 1rem 0;
+    padding: 0.5rem 1rem;
+    background-color: var(--color-primary);
+    color: var(--color-text-primary);
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 1.3rem;
+    margin-left: 134px;
+}
+
+.clear-search-button:hover {
+    background-color: var(--color-primary-hover);
+    font-weight: 700;
+}
+
+.loading-container {
+    text-align: center;
+    margin: 2rem 0;
+}
+
+.loading-text {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: var(--color-primary);
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        opacity: 0.3;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0.3;
+    }
+}
+
 
 .catalog-grid {
     display: grid;
@@ -80,7 +125,7 @@
     color: var(--color-text-secondary);
 }
 
-.scientific-name:hover{
+.scientific-name:hover {
     color: var(--color-secondary-hover);
     cursor: pointer;
 }

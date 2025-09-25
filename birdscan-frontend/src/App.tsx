@@ -16,6 +16,7 @@ import ScrollToTop from "./components/ScrollToTop.tsx";
 import OAuthSuccess from "./components/User/OAuthSucces.tsx";
 import NaturalReserves from "./pages/NaturalReserves.tsx";
 import EditProfile from "./pages/EditProfile.tsx";
+import BirdsDetails from "./components/Explore/BirdsDetails.tsx";
 
 function App() {
   return (
@@ -34,6 +35,7 @@ function App() {
         <Route element={<ProtectedRoute />}>
           <Route path="/userprofile" element={<UserProfile />} />
           <Route path="/birds" element={<Birds />} />
+          <Route path="/birds/:id" element={<BirdsDetails />} />
           <Route path="/naturalreserves" element={<NaturalReserves />} />
           <Route path="/editprofile" element={<EditProfile />} />
 
