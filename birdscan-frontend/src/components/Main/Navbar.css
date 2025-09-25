@@ -38,6 +38,11 @@
     transition: 0.3s;
 }
 
+.navbar_items.active{
+    color: var(--color-secondary);
+    font-weight: 700;
+}
+
 .navbar_items:hover {
     color: var(--color-primary-hover);
 }

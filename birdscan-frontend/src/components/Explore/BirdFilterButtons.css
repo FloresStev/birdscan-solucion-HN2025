@@ -1,0 +1,29 @@
+.filter-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin: 1.5rem 0;
+}
+
+.filter-buttons button {
+    font-family: 'Montserrat';
+    padding: 0.6rem 1.2rem;
+    font-size: 1.3rem;
+    border: 2px solid #2c3e50;
+    border-radius: 8px;
+    background-color: var(--color-surface);
+    color: var(--color-text-primary);
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+
+.filter-buttons button:hover {
+    background-color: var(--color-primary-hover);
+    color: var(--color-text-primary);
+}
+
+.filter-buttons button.active {
+    background-color: var(--color-primary);
+    color: white;
+    border-color: var(--color-primary);
+}

@@ -17,7 +17,7 @@ export class UsersController {
     };
   }
 
-  @Get()
+  @Get('all')
   async findAll() {
     const users = await this.usersService.findAll();
     return {
@@ -27,7 +27,7 @@ export class UsersController {
   }
 
 
-  @Get(':id')
+  @Get('search')
   findOne(@Param('id') id: string) {
     return this.usersService.findOne(id);
   }

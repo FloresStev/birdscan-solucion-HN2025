@@ -1,0 +1,67 @@
+version: '3.9'
+
+services:
+  redis:
+    image: redis:latest
+    container_name: redis
+    ports:
+      - "6379:6379"
+
+  backend:
+    build:
+      context: ./birdscan-backend
+    container_name: birdscan-backend
+    ports:
+      - "3000:3000"
+    depends_on:
+      - redis
+      - postgres
+    environment:
+      REDIS_HOST: redis
+      REDIS_PORT: 6379
+      DB_HOST: postgres
+      DB_PORT: 5432
+      DB_USER: birdscan_user
+      DB_PASSWORD: birdscan2025
+      DB_NAME: birdscan_db
+    volumes:
+      - ./birdscan-backend:/app
+    command: npm run start:dev
+
+  frontend:
+    build:
+      context: ./birdscan-frontend
+    container_name: birdscan-frontend
+    ports:
+      - "5173:5173"
+    depends_on:
+      - backend
+    volumes:
+      - ./birdscan-frontend:/app
+    command: npm run dev
+
+  postgres:
+    image: postgres:17.5
+    container_name: birdscan_postgres
+    restart: always
+    environment:
+      POSTGRES_USER: birdscan_user
+      POSTGRES_PASSWORD: birdscan2025
+      POSTGRES_DB: birdscan_db
+    ports:
+      - "5433:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  pgadmin:
+    image: dpage/pgadmin4
+    container_name: birdscan_pgadmin
+    restart: always
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@birdscan.com
+      PGADMIN_DEFAULT_PASSWORD: admin
+    ports:
+      - "8080:80"
+
+volumes:
+  postgres_data:

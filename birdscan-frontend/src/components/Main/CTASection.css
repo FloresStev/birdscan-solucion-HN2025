@@ -15,26 +15,27 @@
 }
 
 .CTA_section-h2{
-    font-size: 38px;
+    font-size: 2.4rem;
     font-weight: 600;
-    color: var(--color-surface);
+    color: var(--color-text-primary);
     width: 552px;
 
 }
 
 .CTA_section-p{
-    font-size: 20px;
+    font-size: 1.3rem;
     font-weight: 300;
-    color: var(--color-surface);
+    color: var(--color-text-primary);
     width: 800px;
+    margin: 0;
 }
 
 .CTA_section-button{
     width: 280px;
     height: 80px;
-    font-size: 20px;
+    font-size: 1.3rem;
     font-weight: 700;
-    color: var(--color-surface);
+    color: var(--color-text-primary);
     border-radius: 20px;
     border: 2px solid var(--color-surface);
     display: flex;

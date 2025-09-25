@@ -2,7 +2,8 @@ import React from 'react';
 import './Navbar.css';
 import BirdScan_logo from '/src/assets/BirdScan_logo.svg';
 import { useTranslation } from 'react-i18next';
-import { Link } from 'react-router-dom';
+
+import { Link, NavLink } from 'react-router-dom';
 import { useTheme } from './ThemeContext.tsx';
 import LanguageDropdown from './LanguageDropdown';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -24,21 +25,23 @@ const Navbar: React.FC = () => {
                 </Link>
 
                 <nav className='navbar'>
-                    <Link to="/" className='navbar_items'>
+
+                    <NavLink to="/" className='navbar_items'>
                         {t('header.home')}
-                    </Link>
-                    <Link to="/explore" className='navbar_items'>
+                    </NavLink>
+                    <NavLink to="/explore" className='navbar_items'>
                         {t('header.explore')}
-                    </Link>
-                    <Link to="/tours" className='navbar_items'>
+                    </NavLink>
+                    <NavLink to="/tours" className='navbar_items'>
                         {t('header.tours')}
-                    </Link>
-                    <Link to="/events" className='navbar_items'>
+                    </NavLink>
+                    <NavLink to="/events" className='navbar_items'>
                         {t('header.events')}
-                    </Link>
-                    <Link to="/learn" className='navbar_items'>
+                    </NavLink>
+                    <NavLink to="/learn" className='navbar_items'>
+                    
                         {t('header.learn')}
-                    </Link>
+                    </NavLink>
 
                     <div className='language_selector'>
                         <LanguageDropdown i18n={i18n} />

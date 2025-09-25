@@ -6,9 +6,12 @@ import { JwtService } from '@nestjs/jwt';
 import { PayloadEntity } from './payload';
 import { Role, User } from '@prisma/client';
 
+import { RedisService } from '../redis/redis.service';
+
+
 @Injectable()
 export class AuthService {
-    constructor(private usersService: UsersService, private jwtservice: JwtService) { }
+    constructor(private usersService: UsersService, private jwtservice: JwtService, private redisService: RedisService) { }
 
     async validateUser(body: LoginUserDto) {
         try {
@@ -56,6 +59,10 @@ export class AuthService {
             sub: user.id,
             email: user.email,
             role: user.role,
+            firstName: user.firstName ?? user.given_name ?? 'Usuario',
+            lastName: user.lastName ?? user.family_name ?? '',
+            userName: user.userName ?? user.email.split('@')[0],
+            picture: user.picture ?? null,
         };
 
         const { password, ...safeUser } = user;
@@ -65,4 +72,12 @@ export class AuthService {
             user: safeUser,
         };
     }
+
+    async logout(token: string) {
+        const ttl = 3600 * 24;
+        await this.redisService.blacklistToken(token, ttl);
+    }
+
+
+
 }

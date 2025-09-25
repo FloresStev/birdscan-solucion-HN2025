@@ -14,6 +14,12 @@
         "secondary_button_hero": "规划我的行程"
     },
 
+    "userDropDown": {
+        "details": "查看信息",
+        "edit": "编辑",
+        "signout": "注销"
+    },
+
     "main": {
         "h2_main": "我们在尼加拉瓜连接自然、旅游与保护",
         "h3_main": "BirdScan是一个旨在促进尼加拉瓜保护区观鸟旅游的数字平台。您可在此获取关于留鸟与候鸟的信息、自然保护区详情、保护活动资讯，并能联系到认证的当地向导。",
@@ -42,7 +48,7 @@
     "mapsSection": {
         "h2_mapsSection": "定位自然保护区、步道和关键观景点",
         "p_mapsSection": "探索自然保护区的详细地图，定位步道、观鸟点及可用服务设施。提前规划行程，充分享受观鸟之旅",
-        "primary_button_mapsSection": "探索地图"
+        "primary_button_mapsSection": "探索自然保护区"
     },
 
     "ctaSection": {
@@ -72,6 +78,7 @@
         "species_h2-title": "E探索物種",
         "species_p": "在自然環境中發現多種多樣的鳥類，學習辨識方法，並了解每種物種的迷人特點。每次觀察都將拓展您的知識與自然連結",
         "seallS_link": "查看全部",
+        "seEndangered_link": "查看濒危物种",
         "input_placeholder-species": "請輸入物種的學名或俗名",
         "reserves_h2-tittle": "探索自然保護區",
         "reserves_p": "沉浸於生物多樣性豐富、景觀獨特的保護區。探索生態系統，認識其保育重要性，親身體驗與各地自然資源的連結",

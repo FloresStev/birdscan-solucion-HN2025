@@ -14,23 +14,20 @@ const OAuthSuccess: React.FC = () => {
         if (token) {
 
             api.get<GoogleLoginResponse>("/api/auth/profile", {
-                headers: {
-                    Authorization: `Bearer ${token}`
-                }
-            })
-                .then(res => {
-                    login(token, res.data.user);
-                    navigate("/");
-                })
-                .catch(err => {
-                    console.error(err);
-                    navigate("/login");
-                });
+                headers: { Authorization: `Bearer ${token}` }
+            }).then(res => {
+                login(token, res.data.user);
+                navigate("/");
+            }).catch(err => {
+                console.error(err);
+                navigate("/login");
+            });
 
         } else {
             navigate("/login");
         }
     }, []);
+
 
     return <p>Iniciando sesión con Google...</p>;
 };

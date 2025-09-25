@@ -10,11 +10,14 @@ import { JwtStrategy } from './strategy/jwt.strategy';
 import { PrismaService } from 'src/prisma/prisma.service';
 import { GoogleStrategy } from './strategy/google.strategy';
 
+import { RedisModule } from '../redis/redis.module';
+
+
 @Module({
   imports: [PassportModule, JwtModule.register({
     secret: SECRET,
     signOptions: {expiresIn: '8hrs'},
-  }),],
+  }), RedisModule,],
   controllers: [AuthController],
   providers: [AuthService, UsersService, LocalStrategy, JwtStrategy, PrismaService, GoogleStrategy],
 })

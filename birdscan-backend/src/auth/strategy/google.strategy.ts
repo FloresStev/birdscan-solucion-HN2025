@@ -17,6 +17,12 @@ export class GoogleStrategy extends PassportStrategy(Strategy, 'google') {
         });
     }
 
+    authorizationParams(): Record<string, string> {
+        return {
+            prompt: 'select_account',
+        };
+    }
+
     async validate(
         req: any,
         accessToken: string,
@@ -28,24 +34,25 @@ export class GoogleStrategy extends PassportStrategy(Strategy, 'google') {
             const { name, emails } = profile;
 
             const email = emails?.[0]?.value;
-            const firstName = name?.givenName ?? '';
-            const lastName = name?.familyName ?? '';
 
-            let existingUser = await this.usersService.findOne(email);
+            let user = await this.usersService.findByEmail(email);
 
-            if (!existingUser) {
-                existingUser = await this.usersService.createGoogleUser({
+            if (!user) {
+                user = await this.usersService.createGoogleUser({
                     userName: email.split('@')[0],
-                    firstName,
-                    lastName,
+                    firstName: name?.givenName ?? 'Usuario',
+                    lastName: name?.familyName ?? '',
                     email,
                     role: Role.USER,
                 });
             }
 
-            done(null, existingUser);
-        } catch (error) {
-            done(error, false);
+
+            // Devuelve el usuario completo de la DB
+            done(null, user);
+        } catch (err) {
+            console.error("Error en validate:", err);
+            done(err, false);
         }
     }
 }
