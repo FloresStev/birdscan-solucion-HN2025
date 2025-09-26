@@ -2,6 +2,7 @@ import React from 'react';
 import './Navbar.css';
 import BirdScan_logo from '/src/assets/BirdScan_logo.svg';
 import { useTranslation } from 'react-i18next';
+
 import { Link, NavLink } from 'react-router-dom';
 import { useTheme } from './ThemeContext.tsx';
 import LanguageDropdown from './LanguageDropdown';
@@ -24,6 +25,7 @@ const Navbar: React.FC = () => {
                 </Link>
 
                 <nav className='navbar'>
+
                     <NavLink to="/" className='navbar_items'>
                         {t('header.home')}
                     </NavLink>
@@ -37,6 +39,7 @@ const Navbar: React.FC = () => {
                         {t('header.events')}
                     </NavLink>
                     <NavLink to="/learn" className='navbar_items'>
+                    
                         {t('header.learn')}
                     </NavLink>
 

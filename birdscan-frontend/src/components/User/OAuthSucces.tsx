@@ -12,6 +12,7 @@ const OAuthSuccess: React.FC = () => {
         const token = params.get("token");
 
         if (token) {
+
             api.get<GoogleLoginResponse>("/api/auth/profile", {
                 headers: { Authorization: `Bearer ${token}` }
             }).then(res => {
@@ -21,6 +22,7 @@ const OAuthSuccess: React.FC = () => {
                 console.error(err);
                 navigate("/login");
             });
+
         } else {
             navigate("/login");
         }

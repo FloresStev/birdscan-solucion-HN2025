@@ -32,6 +32,7 @@ export class GoogleStrategy extends PassportStrategy(Strategy, 'google') {
     ): Promise<any> {
         try {
             const { name, emails } = profile;
+
             const email = emails?.[0]?.value;
 
             let user = await this.usersService.findByEmail(email);
@@ -46,6 +47,7 @@ export class GoogleStrategy extends PassportStrategy(Strategy, 'google') {
                 });
             }
 
+
             // Devuelve el usuario completo de la DB
             done(null, user);
         } catch (err) {
@@ -53,9 +55,5 @@ export class GoogleStrategy extends PassportStrategy(Strategy, 'google') {
             done(err, false);
         }
     }
-
-
-
-
 }
 

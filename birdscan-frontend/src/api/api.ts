@@ -54,6 +54,8 @@ export interface Bird {
     distribution: string;
 }
 
+    };
+}
 
 
 

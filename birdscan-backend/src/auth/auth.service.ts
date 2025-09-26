@@ -54,7 +54,7 @@ export class AuthService {
     }
 
 
-    async login(user: any) {
+    async login(user: User) {
         const payload: PayloadEntity = {
             sub: user.id,
             email: user.email,
@@ -64,6 +64,8 @@ export class AuthService {
             userName: user.userName ?? user.email.split('@')[0],
             picture: user.picture ?? null,
         };
+
+        const { password, ...safeUser } = user;
 
         return {
             access_token: this.jwtservice.sign(payload),

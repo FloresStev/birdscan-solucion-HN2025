@@ -8,6 +8,7 @@ import { AuthGuard } from '@nestjs/passport';
 import { CreateGoogleUserDto } from 'src/users/dto/create-google-user.dt';
 
 
+
 @Controller('auth')
 export class AuthController {
     constructor(private authService: AuthService, private usersService: UsersService) { }
@@ -53,7 +54,6 @@ export class AuthController {
 
         return res.redirect(`${process.env.FRONTEND_URL}/oauth-success?token=${jwt.access_token}`);
     }
-
 
     @UseGuards(LocalAuthGuard)
     @Post('login')

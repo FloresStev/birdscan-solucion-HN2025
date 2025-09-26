@@ -37,6 +37,7 @@
     "@types/geojson": "^7946.0.16",
     "@types/jwt-decode": "^2.2.1",
     "@types/leaflet": "^1.9.20",
+
     "@types/passport-google-oauth20": "^2.0.16",
     "@types/react": "^19.1.10",
     "@types/react-dom": "^19.1.7",
