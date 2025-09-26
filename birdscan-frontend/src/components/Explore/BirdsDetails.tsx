@@ -4,6 +4,8 @@ import { useParams } from 'react-router-dom';
 import api, { type Bird } from '../../api/api';
 import axios from 'axios';
 import Footer from '../Main/Footer';
+import { Maps } from './Maps';
+import type { GeoJsonObject } from "geojson";
 
 const BirdsDetails: React.FC = () => {
 
@@ -24,6 +26,21 @@ const BirdsDetails: React.FC = () => {
             default: return 'Estado desconocido';
         }
     };
+
+    const [geoJsonData, setGeoJsonData] = useState<GeoJsonObject | null>(null);
+
+    useEffect(() => {
+        fetch('/Reservas_Nicaragua.geojson')
+            .then((res) => res.json())
+            .then((data) => {
+                if (data.type === 'FeatureCollection') {
+                    setGeoJsonData(data);
+                } else {
+                    console.error('GeoJSON inválido:', data);
+                }
+            })
+            .catch((error) => console.error('Error Loading GeoJson:', error))
+    }, [])
 
     useEffect(() => {
         const birdSelected = async () => {
@@ -81,10 +98,17 @@ const BirdsDetails: React.FC = () => {
                     <p> {bird.description} </p>
                 </div>
 
-                <div className = 'distributionMap'>
-                    
+                <div className='maps-container-bird'>
+                    <h3 className="map-title"> {`Mapa de distribución de ${bird.scientificName}`}</h3>
+                    {geoJsonData ? (
+                        <Maps geoJsonData={geoJsonData} />
+                    ) : (
+                        <p>Cargando mapa de reservas...</p>
+                    )}
                 </div>
             </div>
+
+
 
             <Footer />
         </>

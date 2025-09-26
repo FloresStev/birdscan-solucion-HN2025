@@ -38,8 +38,6 @@ function App() {
           <Route path="/birds/:id" element={<BirdsDetails />} />
           <Route path="/naturalreserves" element={<NaturalReserves />} />
           <Route path="/editprofile" element={<EditProfile />} />
-
-
         </Route>
       </Routes>
     </>

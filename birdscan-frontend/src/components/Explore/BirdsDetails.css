@@ -112,15 +112,40 @@ p {
     margin: 40px;
 }
 
-.description-bird-container h3{
+.description-bird-container h3 {
     font-size: 2.38rem;
     font-weight: 700;
     color: var(--color-text-primary);
 }
 
-.description-bird-container p{
+.description-bird-container p {
     margin-right: 50px;
     font-size: 1.3rem;
     font-weight: 400;
     color: var(--color-text-primary);
+}
+
+.maps-container-bird {
+    width: 100%;
+    max-width: 1704px;
+    height: 600px;
+    margin: 40px auto;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    background-color: var(--color-surface);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 20px;
+}
+
+.map-title {
+    font-size: 2rem;
+    font-weight: 600;
+    font-family: "Poppins", sans-serif;
+    color: var(--color-text-primary);
+    margin-bottom: 20px;
+    text-align: center;
 }

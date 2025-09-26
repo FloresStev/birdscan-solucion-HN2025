@@ -37,8 +37,9 @@ export default function BirdSection() {
                         ? `/api/birds/by-status?status=M,MP,S,P/S&page=${page}&limit=${limit}`
                         : filter === 'resident'
                             ? `/api/birds/by-status?status=R&page=${page}&limit=${limit}`
-                            : `/api/birds/all?page=${page}&limit=${limit}`;
-
+                            : filter === 'mixed'
+                                ? `/api/birds/mixed?page=${page}&limit=${limit}`
+                                : `/api/birds/all?page=${page}&limit=${limit}`;
 
             try {
                 const res = await axios.get<{ message: string; data: Bird[]; totalPages?: number }>(
@@ -81,7 +82,7 @@ export default function BirdSection() {
                             : 'Aves de Nicaragua'}
             </h2>
 
-            {['all', 'migratory', 'resident'].includes(filter) && (
+            {['all', 'migratory', 'resident', 'mixed'].includes(filter) && (
                 <BirdFilterButtons context="general" />
             )}
 
@@ -127,7 +128,12 @@ export default function BirdSection() {
                                     <p className="scientific-name" onClick={() => navigate(`/birds/${bird.id}`)} >
                                         {bird.scientificName}
                                     </p>
-                                    <p className="meta">{bird.conservationStatus}</p>
+                                    <div className='status-bird-information'>
+                                        <p className="meta">{bird.conservationStatus}</p>
+                                        <p className="meta_status">
+                                            {Array.isArray(bird.status) ? bird.status.join(', ') : bird.status}
+                                        </p>
+                                    </div>
                                 </div>
                             </div>
                         ))
