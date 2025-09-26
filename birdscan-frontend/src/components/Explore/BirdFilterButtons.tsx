@@ -1,6 +1,6 @@
 // src/components/BirdFilterButtons.tsx
 import { useNavigate, useLocation } from 'react-router-dom';
-import { FaGlobeAmericas, FaDove, FaHome } from 'react-icons/fa';
+import { FaGlobeAmericas, FaDove, FaHome, FaExchangeAlt } from 'react-icons/fa';
 import './BirdFilterButtons.css';
 
 type Props = {
@@ -35,6 +35,17 @@ export function BirdFilterButtons({ context }: Props) {
                     >
                         <FaHome /> Residentes
                     </button>
+                    <button
+                        className={filter === 'mixed' ? 'active' : ''}
+                        onClick={() => navigate('/birds?filter=mixed')}
+                    >
+                        <FaExchangeAlt style={{ marginRight: '8px' }} />
+                        Aves mixtas
+                    </button>
+
+
+
+
                 </>
             ) : (
                 <>
