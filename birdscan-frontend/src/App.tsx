@@ -18,6 +18,8 @@ import OAuthSuccess from "./components/User/OAuthSucces.tsx";
 import NaturalReserves from "./pages/NaturalReserves.tsx";
 import EditProfile from "./pages/EditProfile.tsx";
 import BirdsDetails from "./components/Explore/BirdsDetails.tsx";
+import ReserveDetails from "./components/Explore/ReserveDetails.tsx";
+import Information from "./pages/Information.tsx";
 
 
 function App() {
@@ -34,11 +36,13 @@ function App() {
         <Route path="/login" element={<LogIn />} />
         <Route path="/signup" element={<SignIn />} />
         <Route path="/oauth-success" element={<OAuthSuccess />} />
+        <Route path="/information" element={<Information />} />
         <Route element={<ProtectedRoute />}>
           <Route path="/userprofile" element={<UserProfile />} />
           <Route path="/birds" element={<Birds />} />
           <Route path="/birds/:id" element={<BirdsDetails />} />
           <Route path="/naturalreserves" element={<NaturalReserves />} />
+          <Route path="/naturalreserves/:id" element={<ReserveDetails />} />
           <Route path="/editprofile" element={<EditProfile />} />
         </Route>
       </Routes>

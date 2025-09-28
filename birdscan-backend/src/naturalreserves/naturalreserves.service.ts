@@ -192,6 +192,44 @@ export class NaturalreservesService {
     })
   }
 
+  async getMunicipalities(): Promise<string[]> {
+    const municipalities = await this.prisma.reserve.findMany({
+      distinct: ['municipality'],
+      select: { municipality: true },
+    });
+
+    return municipalities
+      .map(m => m.municipality)
+      .filter(m => typeof m === 'string')
+      .sort((a, b) => a.localeCompare(b));
+  }
+
+  async getTypes(): Promise<string[]> {
+    const types = await this.prisma.reserve.findMany({
+      distinct: ['protected_area_type'],
+      select: { protected_area_type: true },
+    });
+
+    return types
+      .map(t => t.protected_area_type)
+      .filter((t): t is string => typeof t === 'string')
+      .sort((a, b) => a.localeCompare(b));
+  }
+
+  async findById(id: string) {
+    return await this.prisma.reserve.findUnique({
+      where: { id },
+    });
+  }
+
+  async getSpeciesByReserve(reserveId: string) {
+    return await this.prisma.reserveSpecies.findMany({
+      where: { reserveId },
+      include: {
+        species: true,
+      },
+    });
+  }
 
   update(id: number, updateNaturalreserveDto: UpdateNaturalreserveDto) {
     return `This action updates a #${id} naturalreserve`;

@@ -11,7 +11,8 @@
         "h1_header" : "Discover Nicaragua through its birds",
         "h2_header_hero": "Plan your trips, identify species, and support responsible tourism in our nature reserves.",
         "primary_button_hero": "View bird catalog",
-        "secondary_button_hero": "Plan my visit"
+        "secondary_button_hero": "Plan my visit",
+        "learn_use_BS": "Learn how to use BirdScan"
     },
 
     "userDropDown": {

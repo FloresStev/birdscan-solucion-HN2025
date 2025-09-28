@@ -5,17 +5,17 @@ import { UpdateNaturalreserveDto } from './dto/update-naturalreserve.dto';
 
 @Controller('naturalreserves')
 export class NaturalreservesController {
-  constructor(private readonly naturalreservesService: NaturalreservesService) {}
+  constructor(private readonly naturalreservesService: NaturalreservesService) { }
 
-  
+
 
   @Get('all')
   async findAll(
     @Query('page') page: number = 1,
     @Query('limit') limit: number = 20
   ) {
-    const skip = (page - 1)* limit;
-    const reserves = await this.naturalreservesService.findMany({skip, take: limit});
+    const skip = (page - 1) * limit;
+    const reserves = await this.naturalreservesService.findMany({ skip, take: limit });
     const total = await this.naturalreservesService.count();
 
     return {
@@ -28,16 +28,16 @@ export class NaturalreservesController {
   }
 
   @Get('search')
-  async searchReserves(@Query('q') query: string){
+  async searchReserves(@Query('q') query: string) {
     if (!query) {
       throw new BadRequestException('Se requiere un término de búsqueda');
     }
 
     const results = await this.naturalreservesService.searchByName(query);
 
-    return{
+    return {
       message: 'Reservas encontradas exitosamente',
-      data:  results,
+      data: results,
     }
   }
 
@@ -50,7 +50,7 @@ export class NaturalreservesController {
     const typeReserves = protected_area_type.trim();
     const skip = (page - 1) * limit;
 
-    const[reserves, total] = await Promise.all([
+    const [reserves, total] = await Promise.all([
       this.naturalreservesService.getReservesByType(typeReserves, skip, limit),
       this.naturalreservesService.countReservesByTOM(typeReserves),
     ]);
@@ -58,7 +58,7 @@ export class NaturalreservesController {
     return {
       message: 'Reserves filtered by type',
       data: reserves,
-      totalPages: Math.ceil(total/limit),
+      totalPages: Math.ceil(total / limit),
     };
   }
 
@@ -67,7 +67,7 @@ export class NaturalreservesController {
     @Query('municipality') municipality: string,
     @Query('page') page: number = 1,
     @Query('limit') limit: number = 20
-  ){
+  ) {
     const skip = (page - 1) * limit;
     const municipalityName = municipality.trim();
 
@@ -83,6 +83,21 @@ export class NaturalreservesController {
     };
   }
 
+  @Get('municipalities')
+  async getMunicipalities() {
+    return this.naturalreservesService.getMunicipalities();
+  }
+
+  @Get('types')
+  async getTypes() {
+    return this.naturalreservesService.getTypes();
+  }
+
+  @Get(':id')
+  async getReserveById(@Param('id') id: string) {
+    return this.naturalreservesService.findById(id);
+  }
+
   @Patch(':id')
   update(@Param('id') id: string, @Body() updateNaturalreserveDto: UpdateNaturalreserveDto) {
     return this.naturalreservesService.update(+id, updateNaturalreserveDto);
@@ -92,4 +107,20 @@ export class NaturalreservesController {
   remove(@Param('id') id: string) {
     return this.naturalreservesService.remove(+id);
   }
+
+  @Get(':id/species')
+  async getSpecies(@Param('id') id: string) {
+    const records = await this.naturalreservesService.getSpeciesByReserve(id);
+
+    return records.map((entry) => ({
+      id: entry.species.id,
+      spanish_commonName: entry.species.spanish_commonName,
+      scientificName: entry.species.scientificName,
+      imageUrl: entry.species.imageUrl,
+      abundance: entry.abundance,
+      seasonality: entry.seasonality,
+      presenceLevel: entry.presenceLevel,
+    }));
+  }
+
 }
