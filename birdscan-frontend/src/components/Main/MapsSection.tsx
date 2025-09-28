@@ -43,7 +43,7 @@ const MapsSection: React.FC = () => {
                     {t("mapsSection.p_mapsSection")}
                 </p>
 
-                <Link to='/maps' className='button_maps-section'>
+                <Link to='/naturalreserves' className='button_maps-section'>
                     {t("mapsSection.primary_button_mapsSection")}
                 </Link>
             </div>

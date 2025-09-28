@@ -4,6 +4,7 @@ import api, { type Reserve } from "../../api/api"
 import { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { Pagination } from "./Pagination";
+import { ReservesFilter } from "./ReservesFilter";
 
 function useQuery() {
     return new URLSearchParams(useLocation().search);
@@ -69,6 +70,8 @@ export default function ReserveSection() {
             <h2 className='h2-tittle-reserves'>
 
             </h2>
+
+            <ReservesFilter />
 
             {loading && (
                 <div className="Loading container">

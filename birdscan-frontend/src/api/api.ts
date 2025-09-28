@@ -75,6 +75,16 @@ export interface Reserve {
     email: string | null,
 }
 
+export interface ReserveBird {
+    id: string;
+    spanish_commonName: string;
+    scientificName: string;
+    imageUrl: string | null;
+    abundance: number;
+    seasonality: string | null;
+    presenceLevel: string | null;
+}
+
 
 
 

@@ -1,0 +1,16 @@
+.filters-container {
+    display: flex;
+    gap: 1rem;
+    margin: 1rem 0;
+    justify-content: center;
+}
+
+.filters-container select {
+    padding: 0.5rem;
+    font-size: 1rem;
+    border-radius: 6px;
+    font-family: "Montserrat";
+    font-size: 0.9rem;
+    font-weight: 400;
+    border: 1px solid #ccc;
+}
