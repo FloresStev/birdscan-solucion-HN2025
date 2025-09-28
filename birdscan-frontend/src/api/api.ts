@@ -54,6 +54,27 @@ export interface Bird {
     distribution: string;
 }
 
+export interface Reserve {
+    id: string,
+    name: string,
+    description: string | null,
+    department: string,
+    municipality: string,
+    area: number | null,
+    latitude: number | null,
+    longitude: number | null,
+    activities: string | null,
+    protected_area_type: string,
+    images: string[],
+    entrance_fee: string | null,
+    opening_hours: string | null,
+    services: string | null,
+    attraction: string | null,
+    site: string | null,
+    phone: string | null,
+    email: string | null,
+}
+
 
 
 
