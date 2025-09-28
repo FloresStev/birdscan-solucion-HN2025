@@ -1,5 +1,4 @@
 import "../App.css";
-import Navbar from "../components/Main/Navbar.tsx";
 import Hero from "../components/Main/Hero.tsx";
 import AboutBS from "../components/Main/AboutBS.tsx";
 import WhyBS from "../components/Main/WhyBS.tsx";

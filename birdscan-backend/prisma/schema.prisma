@@ -54,21 +54,21 @@ enum Role{
 model Reserve {
   id String @id @default(uuid())
   name String
-  description String
+  description String?
   department String
   municipality String
-  area Float
-  latitude Float
-  longitude Float 
+  area Float?
+  latitude Float?
+  longitude Float? 
   createdAt DateTime @default(now())
   updateAt DateTime @updatedAt
   activities String[]
   protected_area_type String
   images String[]
-  entrance_fee String
-  opening_hours String
-  services String
-  attraction String
+  entrance_fee String?
+  opening_hours String?
+  services String?
+  attraction String?
   site String?
   phone String?
   email String?

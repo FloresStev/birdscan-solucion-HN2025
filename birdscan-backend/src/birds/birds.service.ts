@@ -52,7 +52,7 @@ export class BirdsService {
       const birds = await this.prisma.species.findMany({
         skip,
         take,
-        orderBy: { spanish_commonName: 'asc' },
+        orderBy: { scientificName: 'asc' },
         select: {
           id: true,
           spanish_commonName: true,
@@ -84,7 +84,8 @@ export class BirdsService {
 
 
   async searchByAnyName(query: string) {
-    return this.prisma.species.findMany({
+  try {
+    return await this.prisma.species.findMany({
       where: {
         OR: [
           { scientificName: { contains: query, mode: 'insensitive' } },
@@ -104,7 +105,11 @@ export class BirdsService {
         status: true,
       },
     });
+  } catch (error) {
+    console.error('Error searching species by name:', error);
+    throw new Error('No se pudo realizar la búsqueda de especies');
   }
+}
 
   async getEndangeredSpecies(statusCodes?: string[]) {
     const key = statusCodes?.length
@@ -158,7 +163,7 @@ export class BirdsService {
         },
         NOT: {
           status: {
-            hasEvery: ['M', 'R'], // excluye aves mixtas
+            hasEvery: ['M', 'R'],
           },
         },
       },
