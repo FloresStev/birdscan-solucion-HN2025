@@ -24,6 +24,7 @@ import { SharedCacheModule } from './Shared/cache.module';
     ConfigModule.forRoot({
       isGlobal: true,
     }),
+
     ServeStaticModule.forRoot({
       rootPath: join(process.cwd(), 'public'),
       serveRoot: '/',

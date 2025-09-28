@@ -14,11 +14,13 @@ import ProtectedRoute from "./components/Main/ProtectedRoute.tsx";
 import UserProfile from "./pages/UserProfile.tsx";
 import ScrollToTop from "./components/ScrollToTop.tsx";
 import OAuthSuccess from "./components/User/OAuthSucces.tsx";
+
 import NaturalReserves from "./pages/NaturalReserves.tsx";
 import EditProfile from "./pages/EditProfile.tsx";
 import BirdsDetails from "./components/Explore/BirdsDetails.tsx";
 import ReserveDetails from "./components/Explore/ReserveDetails.tsx";
 import Information from "./pages/Information.tsx";
+
 
 function App() {
   return (

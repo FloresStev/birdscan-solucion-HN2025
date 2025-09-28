@@ -84,8 +84,3 @@ export interface ReserveBird {
     seasonality: string | null;
     presenceLevel: string | null;
 }
-
-
-
-
-

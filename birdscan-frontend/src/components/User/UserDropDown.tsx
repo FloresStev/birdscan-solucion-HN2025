@@ -11,6 +11,7 @@ import axios from "axios";
 
 
 
+
 const UserDropDown: React.FC = () => {
     
     const navigate = useNavigate();
@@ -53,7 +54,6 @@ const UserDropDown: React.FC = () => {
             console.error("Error al cerrar sesión:", error);
         }
     };
-
 
 
     return (
@@ -101,6 +101,7 @@ const UserDropDown: React.FC = () => {
 
                     <button className="logout-btn" onClick={handleLogout}>
                         <FontAwesomeIcon icon={faRightFromBracket} /> {t("userDropDown.signout")}
+
                     </button>
                 </div>
             </div >

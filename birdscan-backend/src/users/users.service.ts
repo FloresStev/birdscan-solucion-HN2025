@@ -18,6 +18,7 @@ export class UsersService {
       },
     });
 
+
     if (existingUser) {
       throw new BadRequestException('El correo o nombre de usuario ya existe');
     }
