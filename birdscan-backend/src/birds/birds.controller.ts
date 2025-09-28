@@ -76,6 +76,25 @@ export class BirdsController {
     };
   }
 
+  @Get('mixed')
+  async getMixedBirds(
+    @Query('page') page: number = 1,
+    @Query('limit') limit: number = 20
+  ) {
+    const skip = (page - 1) * limit;
+
+    const [species, total] = await Promise.all([
+      this.birdsService.getSpeciesWithMixedStatus(skip, limit),
+      this.birdsService.countSpeciesWithMixedStatus(),
+    ]);
+
+    return {
+      message: 'Aves mixtas obtenidas con éxito',
+      data: species,
+      totalPages: Math.ceil(total / limit),
+    };
+  }
+
   @Get(':id')
   async getBirdById(@Param('id') id: string) {
     return this.birdsService.getSpeciesById(id);

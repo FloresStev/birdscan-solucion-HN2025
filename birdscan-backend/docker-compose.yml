@@ -24,8 +24,18 @@ services:
     ports:
       - "8080:80"
 
+  redis:
+    image: redis:7
+    container_name: birdscan_redis
+    restart: always
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+
+
 volumes:
   postgres_data:
-
+  redis_data:
 
 

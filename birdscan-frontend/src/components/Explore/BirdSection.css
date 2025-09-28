@@ -52,7 +52,6 @@
     }
 }
 
-
 .catalog-grid {
     display: grid;
     width: 1704px;
@@ -91,13 +90,10 @@
     display: block;
 }
 
-
 .observation-image:hover img {
     filter: brightness(1.4);
     cursor: pointer;
 }
-
-
 
 .observation-info {
     padding: 0.75rem 1rem;
@@ -130,8 +126,17 @@
     cursor: pointer;
 }
 
+.status-bird-information {
+    display: flex;
+    justify-content: space-between;
+}
 
 .meta {
-    font-size: 0.75rem;
+    font-size: 0.8rem;
     color: var(--color-text-secondary);
+}
+
+.meta_status {
+    font-size: 0.8rem;
+    color: var(--color-secondary);
 }
